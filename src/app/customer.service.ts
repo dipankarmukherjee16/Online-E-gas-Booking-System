@@ -10,6 +10,6 @@ export class CustomerService {
   constructor(public http:HttpClient) { }
 
   viewallcustomer():Observable<any>{
-    return this.http.get('http://localhost:8082/empapp/viewallcustomer');
+    return this.http.get('http://localhost:8082/egasbookingapp/viewallcustomer');
   }
 }
