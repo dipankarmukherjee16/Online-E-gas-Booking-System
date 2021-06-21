@@ -2,9 +2,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ViewallcustomerComponent } from './viewallcustomer/viewallcustomer.component';
 import { ViewcustomerComponent } from './viewcustomer/viewcustomer.component';
+import { ViewcustomerbycityComponent } from './viewcustomerbycity/viewcustomerbycity.component';
+import { ViewcustomerbycylindertypeComponent } from './viewcustomerbycylindertype/viewcustomerbycylindertype.component';
+import { ViewcustomerbyidComponent } from './viewcustomerbyid/viewcustomerbyid.component';
 
 const routes: Routes = [{path:'viewcustomer', component:ViewcustomerComponent,
-                        children:[{path:'viewall', component:ViewallcustomerComponent}]}];
+                        children:[{path:'viewall', component:ViewallcustomerComponent},
+                                  {path:'viewbyid', component:ViewcustomerbyidComponent},
+                                  {path:'viewbycylindertype', component:ViewcustomerbycylindertypeComponent},
+                                  {path:'viewbycity', component:ViewcustomerbycityComponent}]}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

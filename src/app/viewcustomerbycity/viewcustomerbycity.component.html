@@ -1,0 +1,34 @@
+<div class="col-5 mx-auto p-2 m-2">
+  <input type="text" placeholder="Enter City" [(ngModel)]="city" class="form-control"/>
+  <input type="button" value="search" (click)="viewbycity()" class="btn btn-info"/>
+</div>
+<section>
+  <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
+  <table class="table table-primary table-striped table-hover" *ngIf="customers.length>=1"> 
+    <tr>
+      <th>Customer ID</th>
+      <th>Customer Name</th>
+      <th>Mobile No</th>
+      <th>Email</th>
+      <th>Aadhaar Card</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>Connection Status</th>
+      <th>Cylinder type</th>
+    </tr>
+    <tr *ngFor="let cust of customers">
+      <td>{{cust.customerId}}</td>
+      <td>{{cust.userName | titlecase}}</td>
+      <td>{{cust.mobileNumber}}</td>
+      <td>{{cust.email}}</td>
+      <td>{{cust.aadharCard}}</td>
+      <td>{{cust.address}}</td>
+      <td>{{cust.city}}</td>
+      <td>{{cust.connectionStatus}}</td>
+      <td>{{cust.cylinder.cylinderType}}</td>
+      <!-- <td><a class="btn btn-danger text-white" (click)="deletebyid(emp.empId)">Delete</a></td> -->
+      <!-- <td><a class="btn btn-warning text-white" routerLink="/editemp/{{emp.empId}}">Edit</a></td> -->
+    </tr>
+    
+  </table>
+</section>

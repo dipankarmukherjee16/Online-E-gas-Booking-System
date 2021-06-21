@@ -17,7 +17,7 @@ export class ViewallcustomerComponent implements OnInit {
   constructor(public customerService:CustomerService) { }
 
   ngOnInit() {
-    this.customerService.viewallcustomer().subscribe(data=>{
+    this.customerService.viewAllCustomer().subscribe(data=>{
       this.customers=data;
       // let endrow:number = this.currentpage*3;
       // let startrow:number = endrow-3;

@@ -7,13 +7,19 @@ import { FormsModule } from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { ViewcustomerComponent } from './viewcustomer/viewcustomer.component';
 import { ViewallcustomerComponent } from './viewallcustomer/viewallcustomer.component';
+import { ViewcustomerbyidComponent } from './viewcustomerbyid/viewcustomerbyid.component';
+import { ViewcustomerbycylindertypeComponent } from './viewcustomerbycylindertype/viewcustomerbycylindertype.component';
+import { ViewcustomerbycityComponent } from './viewcustomerbycity/viewcustomerbycity.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     ViewcustomerComponent,
-    ViewallcustomerComponent
+    ViewallcustomerComponent,
+    ViewcustomerbyidComponent,
+    ViewcustomerbycylindertypeComponent,
+    ViewcustomerbycityComponent
     
   ],
   imports: [
