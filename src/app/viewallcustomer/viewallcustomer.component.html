@@ -1,0 +1,25 @@
+<div class="col-md-4 mx-auto alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
+<table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3">
+  <tr>
+    <th>Emp ID</th>
+    <th>Emp Name</th>
+    <th>Salary</th>
+    <th>Dept</th>
+    <th>Doj</th>
+    <th>Delete</th>
+    <th>Edit</th>
+  </tr>
+  <tr *ngFor="let emp of employeesdisp">
+    <td>{{emp.empId}}</td>
+    <td>{{emp.empName | titlecase}}</td>
+    <td>{{emp.empSal | currency:'INR'}}</td>
+    <td>{{emp.dept.deptName | titlecase}}</td>
+    <td>{{emp.empDoj}}</td>
+    <td><a class="btn btn-danger text-white" (click)="deletebyid(emp.empId)">Delete</a></td>
+    <td><a class="btn btn-warning text-white" routerLink="/editemp/{{emp.empId}}">Edit</a></td>
+  </tr>
+</table>
+<section class="col-4 mx-auto">
+  <a class="m-2 btn btn-info" (click)="previous()" *ngIf="currentpage!=1">Prev</a>
+  <a class="m-2 btn btn-info" (click)="next()" *ngIf="currentpage!=totalpages">Next</a>
+</section>
