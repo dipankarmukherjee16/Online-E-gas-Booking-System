@@ -8,7 +8,6 @@
 # dependencies
 /node_modules
 
-/src/app/app-routing.module.ts
 
 # profiling files
 chrome-profiler-events.json

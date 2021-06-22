@@ -12,12 +12,13 @@ export class ViewcustomerbycylindertypeComponent implements OnInit {
 
   cylindertype:string;
   customers:Customer[]=[];
-  cylinder:Cylinder[]=[];
+  cylinders:Cylinder[]=[];
   msg:string;
 
   constructor(public customerservice:CustomerService) { }
 
   ngOnInit() {
+    this.customerservice.viewAllCylinder().subscribe(data=>this.cylinders=data);
   }
 
   viewbycylindertype():void{

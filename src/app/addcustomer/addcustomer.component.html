@@ -1,0 +1,41 @@
+<section class="col-4 mx-auto card card-primary p-1 m-1" id="addid">
+  <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div>
+  <form #frm="ngForm" (ngSubmit)="add()">
+    
+    <div>Customer Name</div>
+    <div><input type="text" class="form-control" name="txtname" [(ngModel)]="customer.userName" #cname="ngModel" required pattern="^[A-Za-z\s]{1,}[A-za-z\s]{0,}$"/></div>
+    <div *ngIf="cname.invalid && cname.touched" class="alert alert-danger">
+      <div *ngIf="cname.errors.required">Customer Name is Invalid</div>
+      <div *ngIf="cname.errors.pattern">Customer Name must contain alphabet and can have space in between</div>
+    </div>
+
+    <div>Contact Number</div>
+    <div><input type="tel" class="form-control" name="txtmobile" [(ngModel)]="customer.mobileNumber" #cmob="ngModel" required/></div>
+    <div *ngIf="cmob.invalid && cmob.touched" class="alert alert-danger">Contact no is Mandatory</div>
+
+    <div>Email</div>
+    <div><input type="email" class="form-control" name="txtemail" [(ngModel)]="customer.email" #cmail="ngModel" required/></div>
+    <div *ngIf="cmail.invalid && cmail.touched" class="alert alert-danger">Email is Mandatory</div>
+
+    <div>Aadhar Card Number</div>
+    <div><input type="number" class="form-control" name="txtaadhar" [(ngModel)]="customer.aadharCard" #caadhar="ngModel" required/></div>
+    <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">Aadhar card no is Mandatory</div>
+
+    <div>Customer Address</div>
+    <div><input type="text" class="form-control" name="txtmobile" [(ngModel)]="customer.address" #caddress="ngModel" required/></div>
+    <div *ngIf="caddress.invalid && caddress.touched" class="alert alert-danger">Address is Mandatory</div>
+
+    <div>Customer City</div>
+    <div><input type="text" class="form-control" name="txtcity" [(ngModel)]="customer.city" #ccity="ngModel" required/></div>
+    <div *ngIf="ccity.invalid && ccity.touched" class="alert alert-danger">City is Mandatory</div>
+
+    <div>Cylinder Type</div>
+    <div><input type="text" class="form-control" name="txtctype" [(ngModel)]="customer.cylinderType" #cctype="ngModel" required/></div>
+    <div *ngIf="cctype.invalid && cctype.touched" class="alert alert-danger">
+      <div *ngIf="cctype.errors.required">Cylinder type is Mandatory</div>
+      <div *ngIf="cctype.errors.pattern">Cylinder type is either domestic or industrial</div>
+    </div>
+
+    <input type="submit" value="addcustomer" [disabled]="!frm.valid"/>
+  </form>
+</section>

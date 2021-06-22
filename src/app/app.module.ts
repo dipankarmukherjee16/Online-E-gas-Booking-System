@@ -10,6 +10,8 @@ import { ViewallcustomerComponent } from './viewallcustomer/viewallcustomer.comp
 import { ViewcustomerbyidComponent } from './viewcustomerbyid/viewcustomerbyid.component';
 import { ViewcustomerbycylindertypeComponent } from './viewcustomerbycylindertype/viewcustomerbycylindertype.component';
 import { ViewcustomerbycityComponent } from './viewcustomerbycity/viewcustomerbycity.component';
+import { AddcustomerComponent } from './addcustomer/addcustomer.component';
+import { EditcustomerComponent } from './editcustomer/editcustomer.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ViewcustomerbycityComponent } from './viewcustomerbycity/viewcustomerby
     ViewallcustomerComponent,
     ViewcustomerbyidComponent,
     ViewcustomerbycylindertypeComponent,
-    ViewcustomerbycityComponent
+    ViewcustomerbycityComponent,
+    AddcustomerComponent,
+    EditcustomerComponent
     
   ],
   imports: [
