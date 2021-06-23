@@ -1,8 +1,8 @@
 <div class="col-5 mx-auto p-2 m-2">
   <!-- <input type="text" placeholder="Enter cylinder type" [(ngModel)]="cylindertype" class="form-control"/>
   <input type="button" value="search" (click)="viewbycylindertype()" class="btn btn-info"/> -->
-  <select [(ngModel)]="cylindertype" (change)="viewbycylindertype()" class="form-control">
-    <option value="" selected="true" disabled>---Select Cylinder type---</option>
+  <select [(ngModel)]="cylindertype" (change)="viewbycylindertype()" class="form-select" > 
+    <option  selected disabled>---Select Cylinder type---</option>
     <option *ngFor="let c of cylinders" value="{{c.cylinderType}}">{{c.cylinderType}}</option>
   </select>
 

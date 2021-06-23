@@ -12,6 +12,7 @@ import { ViewcustomerbycylindertypeComponent } from './viewcustomerbycylindertyp
 import { ViewcustomerbycityComponent } from './viewcustomerbycity/viewcustomerbycity.component';
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { EditcustomerComponent } from './editcustomer/editcustomer.component';
+import { LinkaadharComponent } from './linkaadhar/linkaadhar.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { EditcustomerComponent } from './editcustomer/editcustomer.component';
     ViewcustomerbycylindertypeComponent,
     ViewcustomerbycityComponent,
     AddcustomerComponent,
-    EditcustomerComponent
+    EditcustomerComponent,
+    LinkaadharComponent
     
   ],
   imports: [

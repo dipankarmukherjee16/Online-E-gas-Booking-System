@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { EditcustomerComponent } from './editcustomer/editcustomer.component';
+import { LinkaadharComponent } from './linkaadhar/linkaadhar.component';
 import { ViewallcustomerComponent } from './viewallcustomer/viewallcustomer.component';
 import { ViewcustomerComponent } from './viewcustomer/viewcustomer.component';
 import { ViewcustomerbycityComponent } from './viewcustomerbycity/viewcustomerbycity.component';
@@ -15,7 +16,8 @@ const routes: Routes = [{path:'viewcustomer', component:ViewcustomerComponent,
                                   {path:'viewbycylindertype', component:ViewcustomerbycylindertypeComponent},
                                   {path:'viewbycity',component:ViewcustomerbycityComponent}]},
                         {path:'addcustomer', component:AddcustomerComponent},
-                        {path:'editcustomer/:customerid', component:EditcustomerComponent}];
+                        {path:'editcustomer/:customerid', component:EditcustomerComponent},
+                        {path:'linkaadhar/:customerid/:aadharno', component:LinkaadharComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

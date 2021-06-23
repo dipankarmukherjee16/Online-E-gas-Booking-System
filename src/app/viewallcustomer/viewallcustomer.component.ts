@@ -19,25 +19,25 @@ export class ViewallcustomerComponent implements OnInit {
   ngOnInit() {
     this.customerService.viewAllCustomer().subscribe(data=>{
       this.customers=data;
-      // let endrow:number = this.currentpage*3;
-      // let startrow:number = endrow-3;
-      // this.customersdisp=this.customers.slice(startrow, endrow);
-      // this.totalpages = Math.ceil(this.customers.length/3.0);
+      let endrow:number = this.currentpage*3;
+      let startrow:number = endrow-3;
+      this.customersdisp=this.customers.slice(startrow, endrow);
+      this.totalpages = Math.ceil(this.customers.length/3.0);
     });
   }
 
-  // previous():void{
-  //   --this.currentpage;
-  //   let endrow:number = this.currentpage*3;
-  //     let startrow:number = endrow-3;
-  //     this.customersdisp=this.customers.slice(startrow, endrow);
-  // }
+  previous():void{
+     --this.currentpage;
+     let endrow:number = this.currentpage*3;
+       let startrow:number = endrow-3;
+       this.customersdisp=this.customers.slice(startrow, endrow);
+   }
 
-  // next():void{
-  //   ++this.currentpage;
-  //   let endrow:number = this.currentpage*3;
-  //     let startrow:number = endrow-3;
-  //     this.customersdisp=this.customers.slice(startrow, endrow);
-  // }
+   next():void{
+     ++this.currentpage;
+     let endrow:number = this.currentpage*3;
+     let startrow:number = endrow-3;
+     this.customersdisp=this.customers.slice(startrow, endrow);
+   }
 
 }

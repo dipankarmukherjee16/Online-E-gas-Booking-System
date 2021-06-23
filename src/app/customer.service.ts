@@ -32,7 +32,11 @@ export class CustomerService {
   }
 
   editCustomer(customerId:number):Observable<any>{
-    return this.http.put('http://localhost:8082/egasbookingapp/editcustomer/',customerId);
+    return this.http.put('http://localhost:8082/egasbookingapp/editcustomer/'+customerId,{responseType:'text'});
+  }
+
+  linkAadhar(customerId:number, aadharNo:number):Observable<any>{
+    return this.http.put('http://localhost:8082/egasbookingapp/linkaadhar/'+customerId+'/'+aadharNo,{responseType:'text'});
   }
 
   viewAllCylinder():Observable<any>{
