@@ -3,11 +3,15 @@ import { Routes, RouterModule } from '@angular/router';
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { EditcustomerComponent } from './editcustomer/editcustomer.component';
 import { LinkaadharComponent } from './linkaadhar/linkaadhar.component';
+import { SurrendercustomerComponent } from './surrendercustomer/surrendercustomer.component';
 import { ViewallcustomerComponent } from './viewallcustomer/viewallcustomer.component';
+import { ViewallsurrenderedcustomerComponent } from './viewallsurrenderedcustomer/viewallsurrenderedcustomer.component';
 import { ViewcustomerComponent } from './viewcustomer/viewcustomer.component';
 import { ViewcustomerbycityComponent } from './viewcustomerbycity/viewcustomerbycity.component';
 import { ViewcustomerbycylindertypeComponent } from './viewcustomerbycylindertype/viewcustomerbycylindertype.component';
 import { ViewcustomerbyidComponent } from './viewcustomerbyid/viewcustomerbyid.component';
+import { ViewsurrenderedcustomerComponent } from './viewsurrenderedcustomer/viewsurrenderedcustomer.component';
+import { ViewsurrenderedcustomerbyyearComponent } from './viewsurrenderedcustomerbyyear/viewsurrenderedcustomerbyyear.component';
 
 
 const routes: Routes = [{path:'viewcustomer', component:ViewcustomerComponent,
@@ -17,7 +21,11 @@ const routes: Routes = [{path:'viewcustomer', component:ViewcustomerComponent,
                                   {path:'viewbycity',component:ViewcustomerbycityComponent}]},
                         {path:'addcustomer', component:AddcustomerComponent},
                         {path:'editcustomer/:customerid', component:EditcustomerComponent},
-                        {path:'linkaadhar/:customerid/:aadharno', component:LinkaadharComponent}];
+                        {path:'linkaadhar', component:LinkaadharComponent},
+                        {path:'viewsurrenderedcustomer', component:ViewsurrenderedcustomerComponent,
+                        children:[{path:'viewallsurrendered', component:ViewallsurrenderedcustomerComponent},
+                                  {path:'viewsurrenderedbyyear', component:ViewsurrenderedcustomerbyyearComponent}]},
+                        {path:'surrendercylinder', component:SurrendercustomerComponent}];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

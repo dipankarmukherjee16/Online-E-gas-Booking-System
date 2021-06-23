@@ -1,9 +1,12 @@
 <section class="col-4 mx-auto card card-primary p-1 m-1" id="addid">
-  <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div>
+  <!-- <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
+  <h2 class="text-center">Edit Customer</h2>
+  <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
+  <div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
   <form #frm="ngForm" (ngSubmit)="edit()">
     
-    <!-- <div>Customer ID</div>
-    <div><input type="number" name="custid" [(ngModel)]="customers.customerId" required #cid="ngModel" class="form-control" readonly></div> -->
+    <div>Customer ID</div>
+    <div><input type="number" name="custid" [(ngModel)]="custid" required #cid="ngModel" class="form-control" readonly></div> 
 
     <div>Customer Name</div>
     <div><input type="text" class="form-control" name="txtname" [(ngModel)]="customers.userName" #cname="ngModel" required pattern="^[A-Za-z\s]{1,}[A-za-z\s]{0,}$"/></div>
@@ -13,17 +16,24 @@
     </div>
 
     <div>Contact Number</div>
-    <div><input type="tel" class="form-control" name="txtmobile" [(ngModel)]="customers.mobileNumber" #cmob="ngModel" required/></div>
-    <div *ngIf="cmob.invalid && cmob.touched" class="alert alert-danger">Contact no is Mandatory</div>
+    <div><input type="tel" class="form-control" name="telmobile" [(ngModel)]="customers.mobileNumber" #cmob="ngModel" required pattern="[0-9]{10}"/></div>
+    <div *ngIf="cmob.invalid && cmob.touched" class="alert alert-danger">
+      <div *ngIf="cmob.errors.required">Contact no is Mandatory</div>
+      <div *ngIf="cmob.errors.pattern">Contact should be of 10 digits</div>
+    </div>
 
     <div>Email</div>
-    <div><input type="email" class="form-control" name="txtemail" [(ngModel)]="customers.email" #cmail="ngModel" required/></div>
-    <div *ngIf="cmail.invalid && cmail.touched" class="alert alert-danger">Email is Mandatory</div>
+    <div><input type="email" class="form-control" name="txtemail" [(ngModel)]="customers.email" #cmail="ngModel" required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"/></div>
+    <div *ngIf="cmail.invalid && cmail.touched" class="alert alert-danger">
+      <div *ngIf="cmail.errors.required">Email is Mandatory</div>
+      <div *ngIf="cmail.errors.pattern">Enter correct E-Mail ID</div>
+    </div>
 
     <div>Aadhar Card Number</div>
-    <div><input type="number" class="form-control" name="txtaadhar" [(ngModel)]="customers.aadharCard" #caadhar="ngModel" required/></div>
-    <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">Aadhar card no is Mandatory</div>
-
+    <div><input type="text" class="form-control" name="txtaadhar" [(ngModel)]="customers.aadharCard" #caadhar="ngModel"  pattern="[0-9]{12}"/></div>
+    <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">
+      <div *ngIf="caadhar.errors.pattern">Aadhar card no is of 12 digits</div>
+    </div>
     <div>Customer Address</div>
     <div><input type="text" class="form-control" name="txtmobile" [(ngModel)]="customers.address" #caddress="ngModel" required/></div>
     <div *ngIf="caddress.invalid && caddress.touched" class="alert alert-danger">Address is Mandatory</div>
@@ -32,13 +42,22 @@
     <div><input type="text" class="form-control" name="txtcity" [(ngModel)]="customers.city" #ccity="ngModel" required/></div>
     <div *ngIf="ccity.invalid && ccity.touched" class="alert alert-danger">City is Mandatory</div>
 
-    <div>Cylinder Type</div>
+    <!-- <div>Cylinder Type</div>
     <div><input type="text" class="form-control" name="txtctype" [(ngModel)]="customers.cylinderType" #cctype="ngModel" required/></div>
     <div *ngIf="cctype.invalid && cctype.touched" class="alert alert-danger">
       <div *ngIf="cctype.errors.required">Cylinder type is Mandatory</div>
       <div *ngIf="cctype.errors.pattern">Cylinder type is either domestic or industrial</div>
-    </div>
+    </div> -->
 
-    <input type="submit" value="addcustomer" [disabled]="!frm.valid"/>
+    <div>Cylinder Type</div>
+    <div>
+      <select [(ngModel)]="customers.cylinderType" name="txtctype" #cctype="ngModel" class="form-control">
+        <option value="" disabled>---select cylinder type---</option>
+        <option *ngFor="let c of cylinders" value="{{c.cylinderType}}">{{c.cylinderType}}</option>
+      </select>
+    </div>
+    <div *ngIf="cctype.invalid && cctype.touched" class="alert alert-danger">Cylinder type is Mandatory</div>
+
+    <input type="submit" value="Edit Customer" [disabled]="!frm.valid"/>
   </form>
 </section>

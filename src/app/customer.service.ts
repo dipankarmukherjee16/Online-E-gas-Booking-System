@@ -31,11 +31,11 @@ export class CustomerService {
     return this.http.post('http://localhost:8082/egasbookingapp/addcustomer',customer);
   }
 
-  editCustomer(customerId:number):Observable<any>{
-    return this.http.put('http://localhost:8082/egasbookingapp/editcustomer/'+customerId,{responseType:'text'});
+  editCustomer(customerId:number, customer:Customerdto):Observable<any>{
+    return this.http.put('http://localhost:8082/egasbookingapp/editcustomer/'+customerId, customer );
   }
 
-  linkAadhar(customerId:number, aadharNo:number):Observable<any>{
+  linkAadhar(customerId:number, aadharNo:string):Observable<any>{
     return this.http.put('http://localhost:8082/egasbookingapp/linkaadhar/'+customerId+'/'+aadharNo,{responseType:'text'});
   }
 

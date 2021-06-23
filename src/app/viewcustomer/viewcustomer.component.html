@@ -1,12 +1,18 @@
-<article class="row col-10 mx-auto" [ngStyle]="{height:'400px'}">
-  <section class="col-3 bg-info p-2 m-2 ">
-    <div><input type="button" class="btn btn-warning m-2 w-80" value="viewallcustomer" routerLink="/viewcustomer/viewall"/></div>
-    <div><input type="button" class="btn btn-warning m-2 w-80" value="viewcustomerbyid" routerLink="/viewcustomer/viewbyid"/></div>
-    <div><input type="button" class="btn btn-warning m-2 w-80" value="viewcustomerbycylindertype" routerLink="/viewcustomer/viewbycylindertype"/></div>
-    <div><input type="button" class="btn btn-warning m-2 w-80" value="viewcustomerbycity" routerLink="/viewcustomer/viewbycity"/></div>
-  </section>
-  <section class="col-6 p-2 m-2">
-    <h2>View Customer</h2>
-    <router-outlet></router-outlet>
-  </section>
-</article>
+<section class="row col-10 mx-auto justify-content-center" >
+  <div class="text-center">
+    <h2 >View Customer</h2>
+  </div>
+  <div>
+    <nav class="navbar bg-light col-10 p-2 m-2 mx-auto justify-content-center" [ngStyle]="{height:'70px'}">
+      <div class="justify-content-center">
+        <input type="button" class="btn btn-warning m-2 w-80" value="View All Customers" routerLink="/viewcustomer/viewall"/>
+        <input type="button" class="btn btn-warning m-2 w-80" value="View Customers by ID" routerLink="/viewcustomer/viewbyid"/>
+        <input type="button" class="btn btn-warning m-2 w-80" value="View Customers by Cylinder Type" routerLink="/viewcustomer/viewbycylindertype"/>
+        <input type="button" class="btn btn-warning m-2 w-80" value="View Customers by City" routerLink="/viewcustomer/viewbycity"/>
+      </div>
+    </nav>
+  </div>
+  
+  
+  <router-outlet></router-outlet>
+</section>

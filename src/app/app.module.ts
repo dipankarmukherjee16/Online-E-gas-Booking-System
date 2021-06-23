@@ -13,6 +13,10 @@ import { ViewcustomerbycityComponent } from './viewcustomerbycity/viewcustomerby
 import { AddcustomerComponent } from './addcustomer/addcustomer.component';
 import { EditcustomerComponent } from './editcustomer/editcustomer.component';
 import { LinkaadharComponent } from './linkaadhar/linkaadhar.component';
+import { SurrendercustomerComponent } from './surrendercustomer/surrendercustomer.component';
+import { ViewsurrenderedcustomerComponent } from './viewsurrenderedcustomer/viewsurrenderedcustomer.component';
+import { ViewsurrenderedcustomerbyyearComponent } from './viewsurrenderedcustomerbyyear/viewsurrenderedcustomerbyyear.component';
+import { ViewallsurrenderedcustomerComponent } from './viewallsurrenderedcustomer/viewallsurrenderedcustomer.component';
 
 
 @NgModule({
@@ -25,7 +29,11 @@ import { LinkaadharComponent } from './linkaadhar/linkaadhar.component';
     ViewcustomerbycityComponent,
     AddcustomerComponent,
     EditcustomerComponent,
-    LinkaadharComponent
+    LinkaadharComponent,
+    SurrendercustomerComponent,
+    ViewsurrenderedcustomerComponent,
+    ViewsurrenderedcustomerbyyearComponent,
+    ViewallsurrenderedcustomerComponent
     
   ],
   imports: [

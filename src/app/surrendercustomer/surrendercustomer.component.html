@@ -1,0 +1,49 @@
+<div class="container d-grid gap-3 col-5 mx-auto p-2 m-2">
+    <input type="number" placeholder="Enter Cust ID" [(ngModel)]="custid" required class="form-control"/>
+    <input type="button" value="search" (click)="viewbyid()" class="btn btn-outline-secondary btn-floating col-2 p-2 m-2" data-mdb-ripple-color="dark"/>
+  </div>
+  <section>
+    <div *ngIf="msg!=undefined" class="alert alert-danger container d-grid gap-3 col-3 mx-auto p-3 m-3 text-center" role="alert">{{msg}}</div>
+    <table class="table table-primary table-striped table-hover align-items-center" *ngIf="customers!=undefined"> 
+      <tr> 
+        <td>Customer Id</td>
+        <td>{{customers.customerId}}</td>
+      </tr>
+      <tr>
+        <td>Customer Name</td>
+        <td>{{customers.userName | titlecase}}</td>
+      </tr>
+      <tr>
+        <td>Mobile No</td>
+        <td>{{customers.mobileNumber}}</td>
+      </tr>
+      <tr>
+        <td>Email</td>
+        <td>{{customers.email}}</td>
+      </tr>
+      <tr>
+        <td>Aadhaar Card</td>
+        <td>{{customers.aadharCard}}</td>
+      </tr>
+      <tr>
+        <td>Address</td>
+        <td>{{customers.address}}</td>
+      </tr>
+      <tr>
+        <td>City</td>
+        <td>{{customers.city}}</td>
+      </tr>
+      <tr>
+        <td>Connection Status</td>
+        <td>{{customers.connectionStatus}}</td>
+      </tr>
+      <tr>
+        <td>Cylinder type</td>
+        <td>{{customers.cylinder.cylinderType}}</td>
+      </tr>
+      
+    </table>
+    <div class="mt-2 text-center" *ngIf="customers!=undefined">
+      <input type="submit" value="Surrender" (click)=surrenderCylinder() class="btn btn-danger"/> 
+    </div>
+  </section>

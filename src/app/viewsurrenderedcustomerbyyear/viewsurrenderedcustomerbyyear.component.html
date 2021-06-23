@@ -1,0 +1,32 @@
+<div class="container d-grid gap-3 col-5 mx-auto p-2 m-2">
+    <input type="text" placeholder="Enter Year" [(ngModel)]="year" class="form-control"/>
+    <input type="button" value="search" (click)="viewbyyear()" class="btn btn-outline-secondary btn-floating col-2 p-2 m-2" data-mdb-ripple-color="dark"/>
+  </div>
+  <section>
+    <div *ngIf="msg!=undefined" class="alert alert-danger container d-grid gap-3 col-3 mx-auto p-3 m-3 text-center" role="alert">{{msg}}</div>
+    <table class="table table-primary table-striped table-hover align-items-center" *ngIf="customers!=undefined && customers.length>=1"> 
+      <tr>
+        <th>Customer ID</th>
+        <th>Customer Name</th>
+        <th>Mobile No</th>
+        <th>Email</th>
+        <th>Aadhaar Card</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Connection Status</th>
+        <th>Cylinder type</th>
+      </tr>
+      <tr *ngFor="let cust of customers">
+        <td>{{cust.customerId}}</td>
+        <td>{{cust.userName | titlecase}}</td>
+        <td>{{cust.mobileNumber}}</td>
+        <td>{{cust.email}}</td>
+        <td>{{cust.aadharCard}}</td>
+        <td>{{cust.address | titlecase}}</td>
+        <td>{{cust.city | titlecase}}</td>
+        <td>{{cust.connectionStatus | uppercase}}</td>
+        <td>{{cust.cylinder.cylinderType | titlecase}}</td>
+      </tr>
+      
+    </table>
+  </section>
