@@ -1,9 +1,9 @@
 <div class="col-md-4 mx-auto p-2 m-2 text-center">
   <input type="text" placeholder="Enter City" [(ngModel)]="city" class="form-control"/>
-  <input type="button" value="search" (click)="viewbycity()" class="btn btn-info btn-floating p-2 m-2"/>
+  <input type="button" value="search" (click)="viewbycity()" class="btn btn-outline-info btn-floating p-2 m-2"/>
 </div>
 <section>
-  <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
+  <div *ngIf="msg!=undefined" class="alert alert-danger col-md-4 mx-auto text-center">{{msg}}</div>
   <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3"  *ngIf="customers!=undefined && customers.length>=1"> 
     <tr>
       <th>Customer ID</th>
@@ -31,4 +31,5 @@
     </tr>
     
   </table>
+  
 </section>

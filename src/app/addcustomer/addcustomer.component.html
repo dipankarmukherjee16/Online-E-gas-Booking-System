@@ -1,5 +1,5 @@
 <section class="col-md-4 mx-auto card card-primary p-1 m-1" id="addid">
-  <!-- <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
+  
   <h2 class="text-center">Add Customer</h2>
   <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
   <div class="alert alert-danger" *ngIf="errorMsg!=undefined || errorMsgs!=undefined">{{errorMsg}}{{errorMsgs}}</div>
@@ -43,13 +43,15 @@
     <div>Cylinder Type</div>
     <div>
       <select [(ngModel)]="customer.cylinderType" name="txtctype" #cctype="ngModel" class="form-control">
-        <option value="" disabled>---select cylinder type---</option>
+        <option disabled>---select cylinder type---</option>
         <option *ngFor="let c of cylinders" value="{{c.cylinderType}}">{{c.cylinderType}}</option>
       </select>
     </div>
     <div *ngIf="cctype.invalid && cctype.touched" class="alert alert-danger">Cylinder type is Mandatory</div>
 
 
-    <input type="submit" value="Add Customer" [disabled]="!frm.valid"/>
+    <div class="form-group">
+      <input type="submit" value="Add Customer" [disabled]="!frm.valid"/>
+    </div>
   </form>
 </section>

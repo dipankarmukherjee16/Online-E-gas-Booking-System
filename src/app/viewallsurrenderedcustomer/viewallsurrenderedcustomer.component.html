@@ -1,6 +1,6 @@
 <div class="col-md-4 mx-auto alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
 
-<table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3" [ngStyle]="{width:'1300px'}">
+<table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3">
   <tr>
     <th>Customer ID</th>
     <th>Customer Name</th>
@@ -12,19 +12,19 @@
     <th>Connection Status</th>
     <th>Cylinder type</th>
   </tr>
-  <tr *ngFor="let cust of customers">
+  <tr *ngFor="let cust of customersdisp">
     <td>{{cust.customerId}}</td>
     <td>{{cust.userName | titlecase}}</td>
     <td>{{cust.mobileNumber}}</td>
     <td>{{cust.email}}</td>
     <td>{{cust.aadharCard}}</td>
-    <td>{{cust.address}}</td>
-    <td>{{cust.city}}</td>
-    <td>{{cust.connectionStatus}}</td>
-    <td>{{cust.cylinder.cylinderType}}</td>
+    <td>{{cust.address | titlecase}}</td>
+    <td>{{cust.city | titlecase}}</td>
+    <td>{{cust.connectionStatus | uppercase}}</td>
+    <td>{{cust.cylinder.cylinderType | titlecase}}</td>
   </tr>
 </table>
-<section class="col-4 mx-auto">
+<section class="col-md-4 mx-auto">
   <a class="m-2 btn btn-info" (click)="previous()" *ngIf="currentpage!=1">Prev</a>
   <a class="m-2 btn btn-info" (click)="next()" *ngIf="currentpage!=totalpages">Next</a>
 </section>

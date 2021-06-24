@@ -33,8 +33,10 @@ export class ViewcustomerbycityComponent implements OnInit {
         this.msg=error.error.message;
         this.customers=undefined;
       }
-    )
+    );
   }
+
+  
 
 
 }
