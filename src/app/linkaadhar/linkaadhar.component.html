@@ -1,17 +1,25 @@
-<section class="col-4 mx-auto card card-primary p-1 m-1" id="addid">
-  <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div>
+<section class="col-md-4 mx-auto card card-primary p-1 m-1" id="linkid">
+  <h2 class="text-center">Link aadhar Card </h2>
+  <!-- <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
+  <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
+  <div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
   <form #frm="ngForm" (ngSubmit)="link()">
     
    <div>Customer ID</div>
-    <div><input type="number" name="custid" [(ngModel)]="customerid" required #cid="ngModel" class="form-control" required></div> 
-
+    <div><input type="number" name="custid" placeholder="Enter Customer ID" [(ngModel)]="customerid" required #cid="ngModel" class="form-control" required></div> 
     <div *ngIf="cid.invalid && cid.touched" class="alert alert-danger">Customer Id is Mandatory</div>
 
    
-    <div>Aadhar Card Number</div>
+    <!-- <div>Aadhar Card Number</div>
     <div><input type="text" class="form-control" name="txtaadhar" [(ngModel)]="aadharnumber" #caadhar="ngModel" required pattern="[0-9]{12}"/></div>
-    <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">Aadhar card no is Mandatory</div>
+    <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">Aadhar card no is Mandatory</div> -->
 
+    <div>Aadhar Card Number</div>
+    <div><input type="text" class="form-control" name="txtaadhar" placeholder="Enter Aadhar No" [(ngModel)]="aadharnumber" #caadhar="ngModel" required pattern="[0-9]{12}"/></div>
+    <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">
+      <div *ngIf="caadhar.errors.required">Aadhar card no is Mandatory</div>
+      <div *ngIf="caadhar.errors.pattern">Aadhar card no is of 12 digits</div>
+    </div>
 
     <input type="submit" value="Linkaadhar" [disabled]="!frm.valid"/>
   </form>

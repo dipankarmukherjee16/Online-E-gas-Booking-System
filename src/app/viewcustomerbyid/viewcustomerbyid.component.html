@@ -1,45 +1,48 @@
-<div class="col-5 mx-auto p-2 m-2 text-center" >
+<div class="col-md-4 mx-auto p-2 m-2 text-center" >
   <input type="number" placeholder="Enter Customer ID" [(ngModel)]="custid" class="form-control"/>
-  <input type="button" value="search" (click)="viewbyid()" class="btn btn-info btn-floating col-2 p-2 m-2"/>
+  <input type="button" value="search" (click)="viewbyid()" class="btn btn-info btn-floating p-2 m-2"/>
 </div>
-<section>
+<section class="col-4 mx-auto">
   <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
-  <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3" [ngStyle]="{width:'500px'}" *ngIf="customers!=undefined"> 
+  <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3 "  *ngIf="customers!=undefined"> 
     <tr>
-      <td>Customer Id</td> 
+      <th>Customer Id</th> 
       <td>{{customers.customerId}}</td>
     </tr>
     <tr>
-      <td>Customer Name</td>
+      <th>Customer Name</th>
       <td>{{customers.userName | titlecase}}</td>
     </tr>
     <tr>
-      <td>Mobile No</td>
+      <th>Mobile No</th>
       <td>{{customers.mobileNumber}}</td>
     </tr>
     <tr>
-      <td>Email</td>
+      <th>Email</th>
       <td>{{customers.email}}</td>
     </tr>
     <tr>
-      <td>Aadhaar Card</td>
+      <th>Aadhaar Card</th>
       <td>{{customers.aadharCard}}</td>
     </tr>
     <tr>
-      <td>Address</td>
+      <th>Address</th>
       <td>{{customers.address | titlecase}}</td>
     </tr>
     <tr>
-      <td>City</td>
+      <th>City</th>
       <td>{{customers.city | titlecase}}</td>
     </tr>
     <tr>
-      <td>Connection Status</td>
+      <th>Connection Status</th>
       <td>{{customers.connectionStatus | uppercase}}</td>
     </tr>
     <tr>
-      <td>Cylinder type</td>
+      <th>Cylinder type</th>
       <td>{{customers.cylinder.cylinderType | titlecase}}</td>
+    </tr>
+    <tr>
+      <td colspan="2" class="text-center"><a class="btn btn-warning text-white" routerLink="/editcustomer/{{customers.customerId}}">Edit</a></td>
     </tr>
     
   </table>

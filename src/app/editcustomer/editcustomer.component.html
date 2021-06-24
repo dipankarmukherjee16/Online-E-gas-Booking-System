@@ -1,5 +1,4 @@
-<section class="col-4 mx-auto card card-primary p-1 m-1" id="addid">
-  <!-- <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
+<section class="col-md-4 mx-auto card card-primary p-1 m-1" id="editid">
   <h2 class="text-center">Edit Customer</h2>
   <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
   <div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
@@ -9,37 +8,38 @@
     <div><input type="number" name="custid" [(ngModel)]="custid" required #cid="ngModel" class="form-control" readonly></div> 
 
     <div>Customer Name</div>
-    <div><input type="text" class="form-control" name="txtname" [(ngModel)]="customers.userName" #cname="ngModel" required pattern="^[A-Za-z\s]{1,}[A-za-z\s]{0,}$"/></div>
+    <div><input type="text" class="form-control" name="txtname" placeholder="Enter Customer Name" [(ngModel)]="customers.userName" #cname="ngModel" required pattern="^[A-Za-z\s]{1,}[A-za-z\s]{0,}$"/></div>
     <div *ngIf="cname.invalid && cname.touched" class="alert alert-danger"> 
       <div *ngIf="cname.errors.required">Customer Name is Invalid</div>
       <div *ngIf="cname.errors.pattern">Customer Name must contain alphabet and can have space in between</div>
     </div>
 
     <div>Contact Number</div>
-    <div><input type="tel" class="form-control" name="telmobile" [(ngModel)]="customers.mobileNumber" #cmob="ngModel" required pattern="[0-9]{10}"/></div>
+    <div><input type="tel" class="form-control" name="telmobile" placeholder="Enter Contact No" [(ngModel)]="customers.mobileNumber" #cmob="ngModel" required pattern="[0-9]{10}"/></div>
     <div *ngIf="cmob.invalid && cmob.touched" class="alert alert-danger">
       <div *ngIf="cmob.errors.required">Contact no is Mandatory</div>
       <div *ngIf="cmob.errors.pattern">Contact should be of 10 digits</div>
     </div>
 
     <div>Email</div>
-    <div><input type="email" class="form-control" name="txtemail" [(ngModel)]="customers.email" #cmail="ngModel" required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"/></div>
+    <div><input type="email" class="form-control" name="txtemail" placeholder="Enter E-Mail ID" [(ngModel)]="customers.email" #cmail="ngModel" required pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$"/></div>
     <div *ngIf="cmail.invalid && cmail.touched" class="alert alert-danger">
       <div *ngIf="cmail.errors.required">Email is Mandatory</div>
       <div *ngIf="cmail.errors.pattern">Enter correct E-Mail ID</div>
     </div>
 
     <div>Aadhar Card Number</div>
-    <div><input type="text" class="form-control" name="txtaadhar" [(ngModel)]="customers.aadharCard" #caadhar="ngModel"  pattern="[0-9]{12}"/></div>
+    <div><input type="text" class="form-control" name="txtaadhar" placeholder="Enter Aadhar No" [(ngModel)]="customers.aadharCard" #caadhar="ngModel"  pattern="[0-9]{12}"/></div>
     <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">
       <div *ngIf="caadhar.errors.pattern">Aadhar card no is of 12 digits</div>
     </div>
+    
     <div>Customer Address</div>
-    <div><input type="text" class="form-control" name="txtmobile" [(ngModel)]="customers.address" #caddress="ngModel" required/></div>
+    <div><input type="text" class="form-control" name="txtmobile" placeholder="Enter Address" [(ngModel)]="customers.address" #caddress="ngModel" required/></div>
     <div *ngIf="caddress.invalid && caddress.touched" class="alert alert-danger">Address is Mandatory</div>
 
     <div>Customer City</div>
-    <div><input type="text" class="form-control" name="txtcity" [(ngModel)]="customers.city" #ccity="ngModel" required/></div>
+    <div><input type="text" class="form-control" name="txtcity" placeholder="Enter City" [(ngModel)]="customers.city" #ccity="ngModel" required/></div>
     <div *ngIf="ccity.invalid && ccity.touched" class="alert alert-danger">City is Mandatory</div>
 
     <!-- <div>Cylinder Type</div>

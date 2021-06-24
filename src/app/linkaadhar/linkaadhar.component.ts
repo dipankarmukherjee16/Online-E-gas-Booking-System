@@ -10,6 +10,7 @@ export class LinkaadharComponent implements OnInit {
   customerid:number;
   aadharnumber:string;
   msg:string;
+  errorMsg:string;
   constructor(public customerservice:CustomerService) { }
 
   ngOnInit() {
@@ -19,9 +20,12 @@ export class LinkaadharComponent implements OnInit {
       data=>{
         console.log(data);
         this.msg=data.message;
+        this.errorMsg=undefined;
       },
       error=>{
         console.log(error);
+        this.errorMsg=error.error.message;
+        this.msg=undefined;
         
     });
       

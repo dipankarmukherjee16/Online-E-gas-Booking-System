@@ -1,4 +1,4 @@
-<div class="col-5 mx-auto p-2 m-2">
+<div class="col-md-4 mx-auto p-2 m-2">
   <select [(ngModel)]="cylindertype" (change)="viewbycylindertype()" class="form-select" > 
     <option  selected disabled>---Select Cylinder type---</option>
     <option *ngFor="let c of cylinders" value="{{c.cylinderType}}">{{c.cylinderType}}</option>
@@ -7,7 +7,7 @@
 </div>
 <section>
   <div *ngIf="msg!=undefined" class="alert alert-danger">{{msg}}</div>
-  <table class="table table-primary table-striped table-hover" *ngIf="customers.length>=1"> 
+  <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3" *ngIf="customers.length>=1"> 
     <tr>
       <th>Customer ID</th>
       <th>Customer Name</th>
