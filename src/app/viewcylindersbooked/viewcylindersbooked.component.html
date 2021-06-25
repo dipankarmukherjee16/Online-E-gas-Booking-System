@@ -1,0 +1,47 @@
+<div class="col-md-8 mx-auto">
+  <h2 class="text-center">View No of Cylinders Booked</h2>
+</div>
+<section class="col-md-4 mx-auto card card-primary p-2 m-2" id="viewcylinderid">
+  
+  <!-- <div class="alert alert-danger" *ngIf="msg!=undefined">{{msg}}</div> -->
+  <div class="alert alert-success text-center" *ngIf="bookingdetails!=undefined && count>=0">No of Cylinders booked {{count}}</div>
+  <div class="alert alert-danger text-center" *ngIf="msg!=undefined && bookingdetails==undefined">{{msg}}</div>
+  <form #frm="ngForm" (ngSubmit)="viewcylindersbooked()">
+
+    <div>Customer Id</div>
+    <div><input type="number" class="form-control" name="txtcustid" placeholder="Enter Customer Id" [(ngModel)]="custid" #eid="ngModel" required/></div>
+    <div *ngIf="eid.invalid && eid.touched" class="alert alert-danger">Customer Id is Mandatory</div>
+
+    <div>Year</div>
+    <div><input type="number" class="form-control" name="txtyear" placeholder="Enter Year" [(ngModel)]="year" #eyear="ngModel" required/></div>
+    <div *ngIf="eyear.invalid && eyear.touched" class="alert alert-danger">Year is required</div>
+
+    <input type="submit" value="Search" [disabled]="!frm.valid"/>
+  </form>
+  <!-- <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3" *ngIf="count>=0">
+    <tr>
+      <td>No of cylinders</td>
+      <td>{{count}}</td>
+    </tr>
+  </table> -->
+</section>
+<!-- <section class="col-md-4 mx-auto card card-primary p-1 m-1" id="linkid">
+  <h2 class="text-center">Link aadhar Card </h2>
+  <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
+  <!-- <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
+  <div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
+  <form #frm="ngForm" (ngSubmit)="link()">
+    
+   <div>Customer ID</div>
+   <div><input type="number" name="custid" placeholder="Enter Customer ID" [(ngModel)]="customerid" required #cid="ngModel" class="form-control" required></div> 
+   <div *ngIf="cid.invalid && cid.touched" class="alert alert-danger">Customer Id is Mandatory</div>
+
+   <div>Aadhar Card Number</div>
+    <div><input type="text" class="form-control" name="txtaadhar" placeholder="Enter Aadhar No" [(ngModel)]="aadharnumber" #caadhar="ngModel" required pattern="[0-9]{12}"/></div>
+    <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">
+      <div *ngIf="caadhar.errors.required">Aadhar card no is Mandatory</div>
+      <div *ngIf="caadhar.errors.pattern">Aadhar card no is of 12 digits</div>
+    </div>
+<input type="submit" value="Linkaadhar" [disabled]="!frm.valid"/>
+  </form>
+</section> -->

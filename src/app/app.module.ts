@@ -17,6 +17,13 @@ import { SurrendercustomerComponent } from './surrendercustomer/surrendercustome
 import { ViewsurrenderedcustomerComponent } from './viewsurrenderedcustomer/viewsurrenderedcustomer.component';
 import { ViewsurrenderedcustomerbyyearComponent } from './viewsurrenderedcustomerbyyear/viewsurrenderedcustomerbyyear.component';
 import { ViewallsurrenderedcustomerComponent } from './viewallsurrenderedcustomer/viewallsurrenderedcustomer.component';
+import { ViewcylindersbookedComponent } from './viewcylindersbooked/viewcylindersbooked.component';
+import { ViewstatusComponent } from './viewstatus/viewstatus.component';
+import { ViewbookingdetailsComponent } from './viewbookingdetails/viewbookingdetails.component';
+import { ViewbookingComponent } from './viewbooking/viewbooking.component';
+import { GenerateinvoiceComponent } from './generateinvoice/generateinvoice.component';
+import { BookcylinderComponent } from './bookcylinder/bookcylinder.component';
+import { CylinderdeliveredComponent } from './cylinderdelivered/cylinderdelivered.component';
 
 
 @NgModule({
@@ -33,7 +40,14 @@ import { ViewallsurrenderedcustomerComponent } from './viewallsurrenderedcustome
     SurrendercustomerComponent,
     ViewsurrenderedcustomerComponent,
     ViewsurrenderedcustomerbyyearComponent,
-    ViewallsurrenderedcustomerComponent
+    ViewallsurrenderedcustomerComponent,
+    ViewcylindersbookedComponent,
+    ViewstatusComponent,
+    ViewbookingdetailsComponent,
+    ViewbookingComponent,
+    GenerateinvoiceComponent,
+    BookcylinderComponent,
+    CylinderdeliveredComponent
     
   ],
   imports: [

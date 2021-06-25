@@ -1,0 +1,43 @@
+<!-- <section class="col-5 bg-warning card p-1 m-1 mx-auto" [ngStyle]="{height:'260px'}" id="viewid">
+  <h2 style="text-align: center;">View Booking Details</h2>
+  <form #frm="ngForm" (ngSubmit)="viewdetails()">
+    
+    <div>Customer Id</div>
+    <div><input type="number" class="form-control" name="txtcustid" placeholder="Enter Customer Id" [(ngModel)]="custid" #eid="ngModel" required/></div>
+    <div *ngIf="eid.invalid && eid.touched" class="alert alert-danger">Customer Id is Mandatory</div>
+
+    <input type="submit" value="Search" [disabled]="!frm.valid"/>
+  </form>
+  </section> -->
+  
+  <div class="col-md-4 mx-auto p-2 m-2 text-center" >
+    <h2 class="text-center" id="h2">View Booking Details</h2>
+    <input type="text" placeholder="Enter Customer Id" [(ngModel)]="custid" class="form-control" id="viewid"required/>
+    <input type="button" value="Search" (click)="viewdetails()" class="btn btn-outline-info btn-floating p-2 m-2"/>
+  </div>
+  <section>
+    <div *ngIf="msg!=undefined" class="alert alert-danger col-md-4 mx-auto text-center">{{msg}}</div>
+  <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3"*ngIf="bookingdetails!=undefined && bookingdetails.length>=1" >
+    <tr>
+      <th>Gas Booking ID</th>
+      <th>Booking Date</th>
+      <th>Status</th>
+      <th>Customer Id</th>
+      <th>Customer Name</th>
+      <th>Mobile Number</th>
+      <th>Address</th>
+      <th>Cylinder type</th>
+    </tr>
+    <tr *ngFor="let details of bookingdetails">
+      <td>{{details.gasBookingId}}</td>
+      <td>{{details.bookingDate}}</td>
+      <td>{{details.status | uppercase}}</td>
+      <td>{{details.customer.customerId}}</td>
+      <td>{{details.customer.userName | titlecase}}</td>
+      <td>{{details.customer.mobileNumber}}</td>
+      <td>{{details.customer.address}}</td>
+      <td>{{details.customer.cylinder.cylinderType | uppercase}}</td>
+    </tr>
+  </table>
+  </section>
+

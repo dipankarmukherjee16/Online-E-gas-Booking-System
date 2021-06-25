@@ -1,0 +1,22 @@
+<div>
+  <h2 class="text-center">Generate Invoice</h2>
+</div>
+<section class="col-md-4 mx-auto card card-primary p-1 m-1" id="invoiceid">
+  <!-- <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
+  <div class="alert alert-danger" *ngIf="errormsg!=undefined || errors!=undefined">{{errormsg}}
+    <div *ngFor="let e of errors">{{e}}</div>
+  </div> -->
+  <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div>
+  <form #frm="ngForm" (ngSubmit)="geninvoice()">
+
+    <div>Gas Booking Id</div>
+    <div><input type="number" class="form-control" name="txtbookingid" placeholder="Enter gas booking Id" [(ngModel)]="gasbookingid" #eid="ngModel"required/></div>
+    <div *ngIf="eid.invalid && eid.touched" class="alert alert-danger">Booking Id is Mandatory</div>
+
+    <div>Fare</div>
+    <div><input type="number" class="form-control" name="txtfare" placeholder="Enter fare" [(ngModel)]="fare" #efare="ngModel" required/></div>
+    <div *ngIf="efare.invalid && efare.touched" class="alert alert-danger">Fare is required</div>
+
+    <input type="submit" value="Generate Invoice" [disabled]="!frm.valid"/>
+  </form>
+</section>

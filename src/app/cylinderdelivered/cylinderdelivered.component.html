@@ -1,0 +1,14 @@
+<div>
+  <h2 class="text-center">Update Delivery Status</h2>
+</div>
+<section class="col-md-4 mx-auto card card-primary p-1 m-1" id="status">
+<div class="alert " *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div>
+<form #frm="ngForm" (ngSubmit)="cyldelivered()">
+
+  <div>Invoice Id</div>
+  <div><input type="number" name="txtinvoiceid" placeholder="Enter invoice Id" [(ngModel)]="invoiceid" class="form-control" #eid="ngModel" required/></div>
+  <div *ngIf="eid.invalid && eid.touched" class="alert alert-danger">Invoice Id is Mandatory</div>
+
+  <input type="submit" value="Update" [disabled]="!frm.valid"/>
+</form>
+</section>
