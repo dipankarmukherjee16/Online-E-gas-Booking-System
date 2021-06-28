@@ -15,6 +15,7 @@ export class ViewcylindersbookedComponent implements OnInit {
   count:number;
   bookingdetails:GasBooking[]=[];
   msg:string;
+  errorMsg:string;
   ngOnInit() {
   }
 
@@ -22,16 +23,14 @@ export class ViewcylindersbookedComponent implements OnInit {
     this.gasbookingservice.viewnoofcylindersbooked(this.year,this.custid).subscribe(
       data=>{
         console.log(data);
-        this.bookingdetails=data;
-        this.count=this.bookingdetails.length;
-        
+        this.msg=data.message;
+        this.errorMsg=undefined;
+
       },
       error=>{
         console.log(error);
-        this.bookingdetails=undefined;
-        this.msg=error.error.message;
-        
-        
+        this.errorMsg=error.error.message;
+        this.msg=undefined;
       }
     )
   }

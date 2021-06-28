@@ -1,5 +1,7 @@
-<section class="col-md-4 mx-auto card card-primary p-1 m-1" id="editid">
+<div class="col-md-8 mx-auto">
   <h2 class="text-center">Edit Customer</h2>
+</div>
+<section class="col-md-4 mx-auto card card-primary p-1 m-1" id="editid">
   <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
   <div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
   <form #frm="ngForm" (ngSubmit)="edit()">
@@ -58,6 +60,9 @@
     </div>
     <div *ngIf="cctype.invalid && cctype.touched" class="alert alert-danger">Cylinder type is Mandatory</div>
 
-    <input type="submit" value="Edit Customer" [disabled]="!frm.valid"/>
+    <div  class="mt-2 text-center">
+      <input type="submit" value="Edit Customer" [disabled]="!frm.valid"  class="btn btn-success"/>
+    </div>
+    
   </form>
 </section>

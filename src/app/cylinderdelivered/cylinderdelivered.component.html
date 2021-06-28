@@ -2,7 +2,9 @@
   <h2 class="text-center">Update Delivery Status</h2>
 </div>
 <section class="col-md-4 mx-auto card card-primary p-1 m-1" id="status">
-<div class="alert " *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div>
+<!-- <div class="alert " *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
+<div class="alert alert-success" *ngIf="msg!=undefined && errormsg==undefined">Updated Status: {{msg}}</div>
+  <div class="alert alert-danger" *ngIf="errormsg!=undefined && msg==undefined">{{errormsg}}</div>
 <form #frm="ngForm" (ngSubmit)="cyldelivered()">
 
   <div>Invoice Id</div>

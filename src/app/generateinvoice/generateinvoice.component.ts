@@ -10,7 +10,7 @@ export class GenerateinvoiceComponent implements OnInit {
   gasbookingid:number;
   fare:number;
   msg:string;
-  // errormsg:string;
+  errormsg:string;
   msgflag:boolean;
 
   constructor(public invoiceservice:InvoiceService) { }
@@ -18,17 +18,32 @@ export class GenerateinvoiceComponent implements OnInit {
   ngOnInit() {
   }
 
+  // geninvoice():void{
+  //   this.invoiceservice.generateinvoice(this.gasbookingid,this.fare).subscribe(
+  //     data=>{
+  //       console.log(data);
+  //       this.msg=data.message;
+  //       this.msgflag=true;
+  //     },
+  //     error=>{
+  //       console.log(error);
+  //       this.msg=error.error.message;
+  //       this.msgflag=false;
+  //     }
+  //   )
+  // }
+
   geninvoice():void{
     this.invoiceservice.generateinvoice(this.gasbookingid,this.fare).subscribe(
       data=>{
         console.log(data);
         this.msg=data.message;
-        this.msgflag=true;
+        this.errormsg=undefined;
       },
       error=>{
         console.log(error);
-        this.msg=error.error.message;
-        this.msgflag=false;
+        this.errormsg=error.error.message;
+        this.msg=undefined;
       }
     )
   }

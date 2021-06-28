@@ -4,8 +4,8 @@
 <section class="col-md-4 mx-auto card card-primary p-2 m-2" id="viewcylinderid">
   
   <!-- <div class="alert alert-danger" *ngIf="msg!=undefined">{{msg}}</div> -->
-  <div class="alert alert-success text-center" *ngIf="bookingdetails!=undefined && count>=0">No of Cylinders booked {{count}}</div>
-  <div class="alert alert-danger text-center" *ngIf="msg!=undefined && bookingdetails==undefined">{{msg}}</div>
+  <div class="alert alert-success text-center" *ngIf="msg!=undefined && errorMsg==undefined">{{msg}}</div>
+  <div class="alert alert-danger text-center" *ngIf="msg==undefined && errorMsg!=undefined">{{errorMsg}}</div>
   <form #frm="ngForm" (ngSubmit)="viewcylindersbooked()">
 
     <div>Customer Id</div>

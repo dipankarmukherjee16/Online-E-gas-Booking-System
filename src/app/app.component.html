@@ -1,28 +1,47 @@
 <header style="background-color:lightcyan;" class="pt-4 m-2">
   <h1 style="text-align: center; color:midnightblue">Online E-gas Booking System</h1>
-  <div style="width: 80%;text-align: right;"  >
+  <!-- <div style="width: 80%;text-align: right;"  >
       <a href="home.html" style="color:blueviolet; padding: 2px; background-color:silver;">Home</a>
+  </div> -->
+  <div class="col-10 text-end login" *ngIf="!storageservice.loginflag">
+    <a routerLink="/login" style="cursor:pointer">Login</a>
   </div>
+  <div class="col-10 text-end logout" *ngIf="storageservice.loginflag">
+    <span ><b>Hello, {{storageservice.username|titlecase}} </b> </span>
+    <a (click)="doLogout()" class="btn-link" style="cursor:pointer">Logout</a>
+  </div>   
   <hr style="background-color: red; height: 5px;" />
 </header>
 
 <article>
   
-    <nav class="nav nav-link p-2 col-10 m-2 mx-auto" style="background-color:steelblue;" align="center" >
-    <a routerLink='viewcustomer' class="m-2 text-white">View Customer</a>
-    <a routerLink='addcustomer' class="m-2 text-white">Add Customer</a>
-    <a routerLink='linkaadhar' class="m-2 text-white">Link Aadhar</a>
+    <nav class="topnav nav nav-link p-2 col-10 m-2 mx-auto ruler" style="background-color:steelblue;" align="center" >
+    <a routerLink='home' class="m-2 text-white ">Home</a>
+    <a routerLink='viewcustomer' *ngIf="storageservice.role=='admin'" class="m-2 text-white">View Customer</a>
+    <a routerLink='addcustomer' *ngIf="storageservice.role=='admin'" class="m-2 text-white">Add Customer</a>
+    <a routerLink='linkaadhar' *ngIf="storageservice.role=='admin'" class="m-2 text-white">Link Aadhar</a>
 
-    <a routerLink='surrendercylinder' class="m-2 text-white">Surrender Cylinder</a>
-    <a routerLink='viewsurrenderedcustomer' class="m-2 text-white">View Surrendered Customer</a>
+    <a routerLink='viewcylindertypes' *ngIf="storageservice.role=='admin'" class="m-2 text-white">View Cylinder Types</a>
 
-    <a routerLink='viewbooking' class="m-2 text-white">View Booking</a>
-    <a routerLink='bookcylinder' class="m-2 text-white">Book Cylinder</a>
-    <a routerLink='generateinvoice' class="m-2 text-white">Generate Invoice</a>
-    <a routerLink='cylinderdelivered' class="m-2 text-white">Update Status</a>
+    <a routerLink='bookcylinder' *ngIf="storageservice.role=='user'" class="m-2 text-white">Book Cylinder</a>
+    <a routerLink='viewbooking' *ngIf="storageservice.role=='admin'" class="m-2 text-white">View Booking</a>
+    <a routerLink='viewstatus' *ngIf="storageservice.role=='user'" class="m-2 text-white">View Booking Status</a>
+    <a routerLink='generateinvoice' *ngIf="storageservice.role=='admin'" class="m-2 text-white">Generate Invoice</a>
+    <a routerLink='viewallinvoices' *ngIf="storageservice.role=='admin'" class="m-2 text-white">View All Invoices</a>
+    <a routerLink='cylinderdelivered' *ngIf="storageservice.role=='admin'" class="m-2 text-white">Update Status</a>
+
+    <a routerLink='surrendercylinder' *ngIf="storageservice.role=='user'" class="m-2 text-white">Surrender Cylinder</a>
+    <a routerLink='viewsurrenderedcustomer' *ngIf="storageservice.role=='admin'" class="m-2 text-white">View Surrendered Customer</a>
+    <a routerLink='contactus' class="m-2 text-white">Contact Us</a>
    
   </nav>
+
+  <h2 class="text-center" *ngIf="storageservice.role!='admin' && storageservice.role!='user'">
+    Welcome
+  </h2>
+  
   <router-outlet></router-outlet>
+  
 </article>
 <footer class="page-footer purple pt-4 m-2">
   

@@ -9,3 +9,17 @@
         display: block;
     }
 }
+.btn-primary{
+    background-color: #be4949;
+    border-color: #a2649d;
+}
+  .customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4682b4;
+    color: white;
+  }
+  .customers td{
+    background-color: aliceblue;
+  }

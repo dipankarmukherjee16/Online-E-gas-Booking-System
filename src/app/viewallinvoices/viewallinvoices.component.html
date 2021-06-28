@@ -1,0 +1,19 @@
+<div class="alert-danger col-md-4 mx-auto text-center" *ngIf="msg!=undefined">{{msg}}</div>
+<section class="col-md-4 mx-auto">
+<table class="table table-primary table-striped table-hover col-md-4 mx-auto mt-3">
+  <tr>
+    <th>Invoice ID</th>
+    <th>Bill Amount</th>
+    <th>Invoice Status</th>
+    <th>Gas Booking Id</th>
+    <th>Customer Id</th>
+  </tr> 
+  <tr *ngFor="let invoice of invoices">
+    <td>{{invoice.invoiceId}}</td>
+    <td>{{invoice.billAmount}}</td>
+    <td>{{invoice.invoiceStatus}}</td>
+    <td>{{invoice.booking.gasBookingId}}</td>
+    <td>{{invoice.booking.customer.customerId}}</td>
+  </tr>
+</table>
+</section>

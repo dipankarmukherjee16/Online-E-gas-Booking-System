@@ -3,3 +3,62 @@
         display: block;
     }
 }
+
+.ruler{
+    
+    background: -webkit-linear-gradient(left, #000C66, steelblue, #000C66);
+}
+img{
+    height: 500px;
+    width: 1000px;
+}
+.img-fluid{
+    height: auto;
+    width: auto;
+}
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+  }
+  
+  .topnav a {
+    color: #f2f2f2;
+    text-align: center; 
+    text-decoration: none;
+  }
+  
+  .topnav a:hover {
+    /* background-color: rgb(41, 94, 138); */
+    opacity: 0.7;
+
+  }
+  .login a {
+    background-color: teal;
+    color: white;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+  }
+  .login a:hover {
+    opacity: 0.7;
+  }
+  .logout a {
+    background-color: teal;
+    color: white;
+    padding: 5px 5px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    text-decoration: none;
+  }
+  .logout a:hover {
+    opacity: 0.7;
+  }
+  span{
+      color: teal;
+      
+  }

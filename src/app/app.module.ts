@@ -24,6 +24,12 @@ import { ViewbookingComponent } from './viewbooking/viewbooking.component';
 import { GenerateinvoiceComponent } from './generateinvoice/generateinvoice.component';
 import { BookcylinderComponent } from './bookcylinder/bookcylinder.component';
 import { CylinderdeliveredComponent } from './cylinderdelivered/cylinderdelivered.component';
+import { LoginComponent } from './login/login.component';
+import { ViewcylindertypesComponent } from './viewcylindertypes/viewcylindertypes.component';
+import { HomeComponent } from './home/home.component';
+import { ContactusComponent } from './contactus/contactus.component';
+import { ViewallinvoicesComponent } from './viewallinvoices/viewallinvoices.component';
+
 
 
 @NgModule({
@@ -47,7 +53,12 @@ import { CylinderdeliveredComponent } from './cylinderdelivered/cylinderdelivere
     ViewbookingComponent,
     GenerateinvoiceComponent,
     BookcylinderComponent,
-    CylinderdeliveredComponent
+    CylinderdeliveredComponent,
+    LoginComponent,
+    ViewcylindertypesComponent,
+    HomeComponent,
+    ContactusComponent,
+    ViewallinvoicesComponent
     
   ],
   imports: [

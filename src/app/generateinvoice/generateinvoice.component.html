@@ -6,7 +6,9 @@
   <div class="alert alert-danger" *ngIf="errormsg!=undefined || errors!=undefined">{{errormsg}}
     <div *ngFor="let e of errors">{{e}}</div>
   </div> -->
-  <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div>
+  <!-- <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
+  <div class="alert alert-success" *ngIf="msg!=undefined && errormsg==undefined">{{msg}}</div>
+  <div class="alert alert-danger" *ngIf="errormsg!=undefined && msg==undefined">{{errormsg}}</div>
   <form #frm="ngForm" (ngSubmit)="geninvoice()">
 
     <div>Gas Booking Id</div>

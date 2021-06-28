@@ -3,3 +3,12 @@
         display: block;
     }
 }
+.ruler{
+    
+    background: -webkit-linear-gradient(left,#000C66, steelblue);
+    color: white;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+    color: white;
+    border-color: white; 
+}

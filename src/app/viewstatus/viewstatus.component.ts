@@ -13,7 +13,9 @@ export class ViewstatusComponent implements OnInit {
   status:string;
   msg:string;
   errorMsg:string;
-  constructor(public gasbookingservice:GasbookingService) { }
+  constructor(public gasbookingservice:GasbookingService) {
+    
+   }
 
   ngOnInit() {
   }
@@ -22,7 +24,7 @@ export class ViewstatusComponent implements OnInit {
     this.gasbookingservice.viewbookingstatus(this.gasbookingid).subscribe(
       data=>{
         console.log(data);
-        this.bookingdetails=data;
+        this.status=data.message;
         this.errorMsg=undefined;
       },
       error=>{

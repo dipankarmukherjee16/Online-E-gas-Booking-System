@@ -24,6 +24,8 @@
       <div *ngIf="caadhar.errors.pattern">Aadhar card no is of 12 digits</div>
     </div>
 
-    <input type="submit" value="Linkaadhar" [disabled]="!frm.valid"/>
+   <div  class="mt-2 text-center">
+    <input type="submit" value="Linkaadhar" [disabled]="!frm.valid"  class="btn btn-success"/>
+   </div>
   </form>
 </section>

@@ -1,8 +1,14 @@
-<section class="col-md-4 mx-auto card card-primary p-1 m-1" id="addid">
-  
+<div class="col-md-8 mx-auto">
   <h2 class="text-center">Add Customer</h2>
+</div>
+
+<section class="col-md-4 mx-auto card card-primary p-1 m-1" id="addid">
   <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
-  <div class="alert alert-danger" *ngIf="errorMsg!=undefined || errorMsgs!=undefined">{{errorMsg}}{{errorMsgs}}</div>
+  <!-- <div class="alert alert-danger" *ngIf="errorMsg!=undefined || errorMsgs!=undefined">{{errorMsg}}{{errorMsgs}}</div> -->
+  <div class="alert alert-danger" *ngIf="errorMsg!=undefined || errors!=undefined">{{errorMsg}}
+    <div *ngFor="let e of errors">{{e}}</div>
+  </div>
+
   <form #frm="ngForm" (ngSubmit)="add()">
     
     <div>Customer Name</div>
@@ -42,16 +48,17 @@
 
     <div>Cylinder Type</div>
     <div>
-      <select [(ngModel)]="customer.cylinderType" name="txtctype" #cctype="ngModel" class="form-control">
+      <select [(ngModel)]="customer.cylinderType" name="txtctype" #cctype="ngModel" required class="form-select">
         <option disabled>---select cylinder type---</option>
-        <option *ngFor="let c of cylinders" value="{{c.cylinderType}}">{{c.cylinderType}}</option>
+        <option *ngFor="let c of cylinders" value="{{c.cylinderType}}">{{c.cylinderType | titlecase}}</option>
       </select>
     </div>
     <div *ngIf="cctype.invalid && cctype.touched" class="alert alert-danger">Cylinder type is Mandatory</div>
 
 
-    <div class="form-group">
-      <input type="submit" value="Add Customer" [disabled]="!frm.valid"/>
+    <div class="mt-2 text-center">
+      <input type="submit" value="Add Customer" [disabled]="!frm.valid" class="btn btn-success"/>
+      <!-- <input type="reset" value="Reset"/> -->
     </div>
   </form>
 </section>

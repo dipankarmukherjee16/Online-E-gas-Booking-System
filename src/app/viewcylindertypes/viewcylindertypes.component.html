@@ -1,0 +1,22 @@
+<section class="col-md-6 mx-auto text-center">
+<div class="text-center">
+  <h2>Cylinder Types</h2>
+</div>
+<div class="alert-success col-md-4 mx-auto text-center" *ngIf="msg!=undefined">{{msg}}</div>
+<table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3">
+    <tr>
+      <th>Cylinder ID</th>
+      <th>Cylinder Type</th>
+      <th>Weight</th>
+    </tr> 
+    <tr *ngFor="let c of cylindersdisp">
+      <td>{{c.cylinderTypeId}}</td>
+      <td>{{c.cylinderType | titlecase}}</td>
+      <td>{{c.weight}}</td>
+    </tr>
+</table>
+</section>
+<div class="text-center">
+  <a class="m-2 btn btn-info" (click)="previous()" *ngIf="currentpage!=1">Prev</a>
+  <a class="m-2 btn btn-info" (click)="next()" *ngIf="currentpage!=totalpages">Next</a>
+</div>

@@ -1,25 +1,8 @@
-<!-- <div class="col-5 mx-auto p-2 m-2">
-  <input type="number" placeholder="Enter gas booking Id" [(ngModel)]="gasbookingid" class="form-control" #eid="ngModel" required/>
-  <div *ngIf="eid.invalid && eid.touched" class="alert alert-danger">Booking Id is required</div>
-  <input type="button" value="search" (click)="viewstatus()" class="btn btn-info"/>
-</div> -->
-<!-- <section class="col-md-5 bg-warning mx-auto card p-1 m-1" id="viewstatusid">
-  <h2 style="text-align: center;">View Status</h2>
-  <div class="alert alert-success" *ngIf="bookingdetails!=undefined && errorMsg==undefined">{{bookingdetails.status}}</div>
-  <div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
-  <form #frm="ngForm" (ngSubmit)="viewstatus()">
 
-    <div>Gas Booking Id</div>
-    <div><input type="number" class="form-control" placeholder="Enter gas booking Id" name="txtbookingid" [(ngModel)]="gasbookingid" #eid="ngModel"required/></div>
-    <div *ngIf="eid.invalid && eid.touched" class="alert alert-danger">Booking Id is Mandatory</div>
-
-    <input type="submit" value="Search" [disabled]="!frm.valid"/>
-  </form>
-</section> -->
 <div class="col-md-4 mx-auto p-2 m-2 text-center" >
   <h2 class="text-center" id="h2">View Status</h2>
   <section  >
-    <div class="alert alert-success" *ngIf="bookingdetails!=undefined && errorMsg==undefined">{{bookingdetails.status | uppercase}}</div>
+    <div class="alert alert-success" *ngIf="status!=undefined && errorMsg==undefined">Status: {{status | uppercase}}</div>
     <div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
   </section>
 </div>

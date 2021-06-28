@@ -9,7 +9,7 @@ import { InvoiceService } from '../invoice.service';
 export class CylinderdeliveredComponent implements OnInit {
   invoiceid:number;
   msg:string;
-  msgflag:boolean;
+  errormsg:string;
   constructor(public invoiceservice:InvoiceService) { }
 
   ngOnInit() {
@@ -20,12 +20,12 @@ export class CylinderdeliveredComponent implements OnInit {
       data=>{
         console.log(data);
         this.msg=data.message;
-        this.msgflag=true;
+        this.errormsg=undefined;
       },
       error=>{
         console.log(error);
-        this.msg=error.error.message;
-        this.msgflag=false;
+        this.errormsg=error.error.message;
+        this.msg=undefined;
       }
     )
   }

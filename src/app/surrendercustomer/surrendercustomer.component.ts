@@ -14,7 +14,9 @@ export class SurrendercustomerComponent implements OnInit {
   customers:any=undefined;
 
 
-  constructor(public surrenderservice:SurrendercylinderService, public customerservice:CustomerService) { }
+  constructor(public surrenderservice:SurrendercylinderService, public customerservice:CustomerService) {
+    this.custid=parseInt(localStorage.getItem("userId"));
+   }
 
   ngOnInit(): void {
   }
