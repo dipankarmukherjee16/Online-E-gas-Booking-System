@@ -1,15 +1,17 @@
 <h2 class="text-center">Book Cylinder</h2>
 <section class="col-md-4 mx-auto card card-primary p-1 m-1 " id="book">
   <!-- <div class="alert alert-danger  text-center" *ngIf="msg!=undefined">{{msg}}</div> -->
-  <div class="alert alert-success" *ngIf="msg!=undefined && errormsg==undefined">{{msg}}</div>
-  <div class="alert alert-danger" *ngIf="errormsg!=undefined && msg==undefined">{{errormsg}}</div>
+  <div class="alert alert-success text-center" *ngIf="msg!=undefined && errormsg==undefined">{{msg}}</div>
+  <div class="alert alert-danger text-center" *ngIf="errormsg!=undefined && msg==undefined">{{errormsg}}</div>
   <form #frm="ngForm" (ngSubmit)="book()">
 
     <div>Customer Id</div>
     <div><input type="number" class="form-control" name="txtcustid" placeholder="Enter Customer Id" [(ngModel)]="custid" #eid="ngModel" required readonly/></div>
     <!-- <div *ngIf="eid.invalid && eid.touched" class="alert alert-danger">Customer Id is Mandatory</div> -->
 
-    <input type="submit" value="Book" [disabled]="!frm.valid"/>
+    <div class="mt-2 text-center">
+      <input type="submit" value="Book" [disabled]="!frm.valid" class="btn btn-success"/>
+    </div>
   </form>
   </section>
 <section>

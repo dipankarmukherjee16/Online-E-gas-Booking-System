@@ -27,43 +27,49 @@ export class AddcustomerComponent implements OnInit {
     this.customerservice.viewAllCylinder().subscribe(data=>this.cylinders = data);
   }
 
-  // add():void{
-  //   this.customerservice.addCustomer(this.customer).subscribe(
-  //     data=>{
-  //       console.log(data);
-  //       this.msg=data.message;
-  //       this.errorMsg=undefined;
-  //       this.errorMsgs=undefined;
-  //       this.customer=new Customerdto();
-  //       this.form.reset;
-       
-  //     },
-  //     error=>{
-  //       console.log(error);
-  //       this.errorMsg=error.error.message;
-  //       this.errorMsgs=error.error.messages[0];
-  //       this.msg=undefined;
-      
-  //     }
-  //   );
-  // }
-
-  add(){
+  add():void{
     this.customerservice.addCustomer(this.customer).subscribe(
       data=>{
         console.log(data);
         this.msg=data.message;
         this.errorMsg=undefined;
-        this.errors=undefined;
+        this.errorMsgs=undefined;
         this.customer=new Customerdto();
-        this.form.reset();
+        this.form.reset;
+       
       },
       error=>{
         console.log(error);
-        this.errorMsg=JSON.parse(error.error).message;
+        this.errorMsg=error.error.message;
+        if(this.errorMsg==undefined)
+          {
+            this.errorMsgs=error.error.messages[0];
+          }
+        if(this.errorMsg!=undefined){
+          this.errorMsgs=undefined;
+        }
         this.msg=undefined;
-        this.errors=JSON.parse(error.error).messages;
+      
       }
     );
   }
+
+  // add(){
+  //   this.customerservice.addCustomer(this.customer).subscribe(
+  //     data=>{
+  //       console.log(data);
+  //       this.msg=data.message;
+  //       this.errorMsg=undefined;
+  //       this.errors=undefined;
+  //       this.customer=new Customerdto();
+  //       this.form.reset();
+  //     },
+  //     error=>{
+  //       console.log(error);
+  //       this.errorMsg=JSON.parse(error.error).message;
+  //       this.msg=undefined;
+  //       this.errors=JSON.parse(error.error).messages;
+  //     }
+  //   );
+  // }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../customer';
+import { Egasconstants } from '../egasconstants';
 import { SurrendercylinderService } from '../surrendercylinder.service';
 
 @Component({
@@ -21,7 +22,7 @@ export class ViewsurrenderedcustomerbyyearComponent implements OnInit {
   viewbyyear():void{
 
     if(this.year==null){
-      this.msg="Enter proper year";
+      this.msg=Egasconstants.ENTER_PROPER_YEAR;
       return;
     }
     this.surrendercylinderservice.viewSurrenderedCustomerByYear(this.year).subscribe(

@@ -2,8 +2,8 @@
   <h2 class="text-center">Edit Customer</h2>
 </div>
 <section class="col-md-4 mx-auto card card-primary p-1 m-1" id="editid">
-  <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
-  <div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
+  <div class="alert alert-success text-center" *ngIf="msg!=undefined">{{msg | titlecase}}</div>
+  <div class="alert alert-danger  text-center" *ngIf="errorMsg!=undefined">{{errorMsg  | titlecase}}</div>
   <form #frm="ngForm" (ngSubmit)="edit()">
     
     <div>Customer ID</div>
@@ -55,13 +55,13 @@
     <div>
       <select [(ngModel)]="customers.cylinderType" name="txtctype" #cctype="ngModel" class="form-control">
         <option value="" disabled>---select cylinder type---</option>
-        <option *ngFor="let c of cylinders" value="{{c.cylinderType}}">{{c.cylinderType}}</option>
+        <option *ngFor="let c of cylinders" value="{{c.cylinderType}}">{{c.cylinderType | titlecase}}</option>
       </select>
     </div>
     <div *ngIf="cctype.invalid && cctype.touched" class="alert alert-danger">Cylinder type is Mandatory</div>
 
     <div  class="mt-2 text-center">
-      <input type="submit" value="Edit Customer" [disabled]="!frm.valid"  class="btn btn-success"/>
+      <input type="submit" value="Save" [disabled]="!frm.valid"  class="btn btn-success"/>
     </div>
     
   </form>

@@ -18,3 +18,13 @@ div input{
     text-align: center;
     
 }
+.bookings th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4682b4;
+    color: white;
+  }
+  .bookings td{
+    background-color: aliceblue;
+  }

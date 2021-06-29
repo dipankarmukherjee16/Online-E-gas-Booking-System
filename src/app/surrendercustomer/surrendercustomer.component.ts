@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
+import { Egasconstants } from '../egasconstants';
 import { SurrendercylinderService } from '../surrendercylinder.service';
 
 @Component({
@@ -23,10 +24,6 @@ export class SurrendercustomerComponent implements OnInit {
 
   surrenderCylinder():void{
 
-    // if(this.custid==undefined || this.custid==null ||this.custid<=0){
-    //   this.msg="Enter the Customer ID greater than 0";
-    //   return;
-    // }
     this.surrenderservice.surrenderCylinder(this.custid).subscribe(
     data=>{
       console.log(data);
@@ -40,7 +37,7 @@ export class SurrendercustomerComponent implements OnInit {
 
   viewbyid():void{
     if(this.custid==undefined || this.custid==null ||this.custid<=0){
-      this.msg="Enter the employee ID greater than 0";
+      this.msg=Egasconstants.ENTER_PROPER_ID;
       return;
     }
     this.customerservice.viewCustomerByID(this.custid).subscribe(

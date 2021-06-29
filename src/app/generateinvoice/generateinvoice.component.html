@@ -7,8 +7,8 @@
     <div *ngFor="let e of errors">{{e}}</div>
   </div> -->
   <!-- <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
-  <div class="alert alert-success" *ngIf="msg!=undefined && errormsg==undefined">{{msg}}</div>
-  <div class="alert alert-danger" *ngIf="errormsg!=undefined && msg==undefined">{{errormsg}}</div>
+  <div class="alert alert-success text-center" *ngIf="msg!=undefined && errormsg==undefined">{{msg | titlecase}}</div>
+  <div class="alert alert-danger text-center" *ngIf="errormsg!=undefined && msg==undefined">{{errormsg | titlecase}}</div>
   <form #frm="ngForm" (ngSubmit)="geninvoice()">
 
     <div>Gas Booking Id</div>
@@ -19,6 +19,8 @@
     <div><input type="number" class="form-control" name="txtfare" placeholder="Enter fare" [(ngModel)]="fare" #efare="ngModel" required/></div>
     <div *ngIf="efare.invalid && efare.touched" class="alert alert-danger">Fare is required</div>
 
-    <input type="submit" value="Generate Invoice" [disabled]="!frm.valid"/>
+    <div class="mt-2 text-center">
+    <input type="submit" value="Generate Invoice" [disabled]="!frm.valid" class="btn btn-success"/>
+    </div>
   </form>
 </section>

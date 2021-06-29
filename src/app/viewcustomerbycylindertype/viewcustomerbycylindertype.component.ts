@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 import { Cylinder } from '../cylinder';
+import { Egasconstants } from '../egasconstants';
 
 @Component({
   selector: 'app-viewcustomerbycylindertype',
@@ -15,15 +16,22 @@ export class ViewcustomerbycylindertypeComponent implements OnInit {
   cylinders:Cylinder[]=[];
   msg:string;
 
+  searchstr:string;
+  sort:string;
+
   constructor(public customerservice:CustomerService) { }
 
   ngOnInit() {
     this.customerservice.viewAllCylinder().subscribe(data=>this.cylinders=data);
   }
 
+  setField(str:string){
+    this.sort=str;
+  }
+
   viewbycylindertype():void{
     if(this.cylindertype==undefined || this.cylindertype==null ){
-      this.msg="Enter the cylinder type";
+      this.msg=Egasconstants.ENTER_PROPER_CYLINDER_TYPE;
       return;
     }
     this.customerservice.viewCustomerByCylinderType(this.cylindertype).subscribe(

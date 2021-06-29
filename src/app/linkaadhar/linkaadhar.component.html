@@ -1,11 +1,11 @@
 <div class="col-md-8 mx-auto">
-  <h2 class="text-center">Link aadhar Card </h2>
+  <h2 class="text-center">Link Aadhar Card </h2>
 </div>
 <section class="col-md-4 mx-auto card card-primary p-1 m-1" id="linkid">
   
   <!-- <div class="alert" *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
-  <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
-  <div class="alert alert-danger" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
+  <div class="alert alert-success text-center" *ngIf="msg!=undefined">{{msg}}</div>
+  <div class="alert alert-danger text-center" *ngIf="errorMsg!=undefined">{{errorMsg}}</div>
   <form #frm="ngForm" (ngSubmit)="link()">
     
    <div>Customer ID</div>

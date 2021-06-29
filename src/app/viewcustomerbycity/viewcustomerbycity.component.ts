@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
+import { Egasconstants } from '../egasconstants';
 
 @Component({
   selector: 'app-viewcustomerbycity',
@@ -12,14 +13,22 @@ export class ViewcustomerbycityComponent implements OnInit {
   city:string;
   customers:Customer[]=[];
   msg:string;
+
+  searchstr:string;
+  sort:string;
+
   constructor(public customerservice:CustomerService) { }
 
   ngOnInit() {
   }
 
+  setField(str:string){
+    this.sort=str;
+  }
+  
   viewbycity():void{
     if(this.city==undefined || this.city==null ){
-      this.msg="Enter the city name";
+      this.msg=Egasconstants.ENTER_PROPER_CITY;
       return;
     }
     this.customerservice.viewCustomerByCity(this.city).subscribe(
@@ -35,8 +44,5 @@ export class ViewcustomerbycityComponent implements OnInit {
       }
     );
   }
-
-  
-
 
 }

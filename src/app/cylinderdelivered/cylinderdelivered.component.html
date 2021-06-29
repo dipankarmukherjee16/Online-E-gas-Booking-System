@@ -3,14 +3,16 @@
 </div>
 <section class="col-md-4 mx-auto card card-primary p-1 m-1" id="status">
 <!-- <div class="alert " *ngIf="msg!=undefined" [ngStyle]="{'background-color':this.msgflag?'green':'red'}">{{msg}}</div> -->
-<div class="alert alert-success" *ngIf="msg!=undefined && errormsg==undefined">Updated Status: {{msg}}</div>
-  <div class="alert alert-danger" *ngIf="errormsg!=undefined && msg==undefined">{{errormsg}}</div>
+<div class="alert alert-success text-center" *ngIf="msg!=undefined && errormsg==undefined">Updated Status: {{msg}}</div>
+  <div class="alert alert-danger text-center" *ngIf="errormsg!=undefined && msg==undefined">{{errormsg}}</div>
 <form #frm="ngForm" (ngSubmit)="cyldelivered()">
 
   <div>Invoice Id</div>
   <div><input type="number" name="txtinvoiceid" placeholder="Enter invoice Id" [(ngModel)]="invoiceid" class="form-control" #eid="ngModel" required/></div>
   <div *ngIf="eid.invalid && eid.touched" class="alert alert-danger">Invoice Id is Mandatory</div>
 
-  <input type="submit" value="Update" [disabled]="!frm.valid"/>
+  <div class="mt-2 text-center">
+    <input type="submit" value="Update" [disabled]="!frm.valid" class="btn btn-success"/>
+  </div>
 </form>
 </section>

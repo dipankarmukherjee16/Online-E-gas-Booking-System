@@ -16,8 +16,8 @@
     <input type="button" value="Search" (click)="viewdetails()" class="btn btn-outline-info btn-floating p-2 m-2"/>
   </div>
   <section>
-    <div *ngIf="msg!=undefined" class="alert alert-danger col-md-4 mx-auto text-center">{{msg}}</div>
-  <table class="table table-primary table-striped table-hover col-md-8 mx-auto mt-3"*ngIf="bookingdetails!=undefined && bookingdetails.length>=1" >
+    <div *ngIf="msg!=undefined" class="alert alert-danger col-md-4 mx-auto text-center">{{msg | titlecase}}</div>
+  <table class="bookings table table-striped table-hover col-md-8 mx-auto mt-3" *ngIf="bookingdetails!=undefined && bookingdetails.length>=1 " >
     <tr>
       <th>Gas Booking ID</th>
       <th>Booking Date</th>
@@ -35,7 +35,7 @@
       <td>{{details.customer.customerId}}</td>
       <td>{{details.customer.userName | titlecase}}</td>
       <td>{{details.customer.mobileNumber}}</td>
-      <td>{{details.customer.address}}</td>
+      <td>{{details.customer.address | titlecase}}</td>
       <td>{{details.customer.cylinder.cylinderType | uppercase}}</td>
     </tr>
   </table>

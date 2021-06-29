@@ -48,8 +48,8 @@ const routes: Routes = [{path:'home', component:HomeComponent},
                         {path:'viewstatus', component:ViewstatusComponent, canActivate:[EgasGuard], data:{role:"user"}},
                         {path:'generateinvoice', component:GenerateinvoiceComponent,  canActivate:[EgasGuard], data:{role:"admin"}},
                         {path:'cylinderdelivered', component:CylinderdeliveredComponent,  canActivate:[EgasGuard], data:{role:"admin"}},
-                        {path:'viewallinvoices', component:ViewallinvoicesComponent},
-                        {path:'viewcylindertypes', component:ViewcylindertypesComponent},
+                        {path:'viewallinvoices', component:ViewallinvoicesComponent,  canActivate:[EgasGuard], data:{role:"admin"}},
+                        {path:'viewcylindertypes', component:ViewcylindertypesComponent,  canActivate:[EgasGuard], data:{role:"admin"}},
                         {path:'login', component:LoginComponent}];
 
 @NgModule({

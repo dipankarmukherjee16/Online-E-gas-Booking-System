@@ -59,7 +59,7 @@ export class CustomerService {
     let str:string="";
     for(let idx=0; idx<pwd.length;++idx)
     {
-      str += String.fromCharCode( pwd.charCodeAt(idx)-3);
+      str += String.fromCharCode( pwd.charCodeAt(idx)+3);
     }
     return str;
   }

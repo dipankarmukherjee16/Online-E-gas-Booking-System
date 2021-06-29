@@ -29,6 +29,7 @@ import { ViewcylindertypesComponent } from './viewcylindertypes/viewcylindertype
 import { HomeComponent } from './home/home.component';
 import { ContactusComponent } from './contactus/contactus.component';
 import { ViewallinvoicesComponent } from './viewallinvoices/viewallinvoices.component';
+import { OrderbyPipe } from './orderby.pipe';
 
 
 
@@ -58,7 +59,8 @@ import { ViewallinvoicesComponent } from './viewallinvoices/viewallinvoices.comp
     ViewcylindertypesComponent,
     HomeComponent,
     ContactusComponent,
-    ViewallinvoicesComponent
+    ViewallinvoicesComponent,
+    OrderbyPipe
     
   ],
   imports: [

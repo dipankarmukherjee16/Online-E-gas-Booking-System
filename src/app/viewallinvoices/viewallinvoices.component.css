@@ -9,3 +9,13 @@
         display: block;
     }
 }
+.invoices th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4682b4;
+    color: white;
+  }
+  .invoices td{
+    background-color: aliceblue;
+  }

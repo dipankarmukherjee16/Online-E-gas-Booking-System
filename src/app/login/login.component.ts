@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { error } from 'protractor';
 import { CustomerService } from '../customer.service';
+import { Egasconstants } from '../egasconstants';
 import { Logindto } from '../logindto';
 import { StorageService } from '../storage.service';
 
@@ -32,7 +33,7 @@ export class LoginComponent implements OnInit {
       this.storageservice.msg=undefined;
       localStorage.setItem("userId", this.login.userId+"");
     },
-      error=>{this.storageservice.msg="Incorrect username & password";
+      error=>{this.storageservice.msg=Egasconstants.INCORRECT_USER_CREDENTIALS;
       this.storageservice.loginflag=false;
       this.router.navigateByUrl("/login");}
     );

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Egasconstants } from '../egasconstants';
 import { GasBooking } from '../gas-booking';
 import { GasbookingService } from '../gasbooking.service';
 
@@ -20,7 +20,12 @@ export class ViewbookingdetailsComponent implements OnInit {
     
     }
 
+    
     viewdetails():void{
+      // if(this.custid==undefined || this.custid==null ||this.custid<=0){
+      //   this.msg=Egasconstants.ENTER_PROPER_ID;
+      //   return;
+      // }
       this.gasbookingservice.viewbookingdetails(this.custid).subscribe(
         data=>{
           console.log(data);

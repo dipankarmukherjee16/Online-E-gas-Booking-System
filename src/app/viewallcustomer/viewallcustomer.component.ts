@@ -13,7 +13,8 @@ export class ViewallcustomerComponent implements OnInit {
   currentpage:number=1;
   customersdisp:Customer[]=[];
   totalpages:number;
-  
+
+ 
 
   constructor(public customerService:CustomerService) { }
 

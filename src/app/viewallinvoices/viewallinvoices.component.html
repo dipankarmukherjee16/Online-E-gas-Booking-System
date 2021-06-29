@@ -1,6 +1,8 @@
-<div class="alert-danger col-md-4 mx-auto text-center" *ngIf="msg!=undefined">{{msg}}</div>
-<section class="col-md-4 mx-auto">
-<table class="table table-primary table-striped table-hover col-md-4 mx-auto mt-3">
+<section class="col-md-8 mx-auto mt-3">
+  <h2 class="text-center">View All Invoices</h2>
+<div *ngIf="msg!=undefined" class="alert alert-danger col-md-4 mx-auto text-center">{{msg}}</div>
+
+<table class="invoices table table-striped table-hover col-md-8 mx-auto mt-3" *ngIf="invoices!=undefined && invoices.length>=1">
   <tr>
     <th>Invoice ID</th>
     <th>Bill Amount</th>

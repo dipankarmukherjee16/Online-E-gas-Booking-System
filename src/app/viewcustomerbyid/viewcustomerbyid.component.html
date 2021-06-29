@@ -5,50 +5,53 @@
   <input type="number" placeholder="Enter Customer ID" [(ngModel)]="custid" class="form-control"/>
   <input type="button" value="search" (click)="viewbyid()" class="btn btn-outline-info btn-floating p-2 m-2"/>
 </div>
-<section class="col-md-4 mx-auto">
-  <div *ngIf="msg!=undefined" class="alert alert-danger text-center">{{msg}}</div>
-  <table class=" customers table table-striped table-hover col-md-8 mx-auto mt-3 "  *ngIf="customers!=undefined"> 
-    <tr>
-      <th>Customer Id</th> 
-      <td>{{customers.customerId}}</td>
-    </tr>
-    <tr>
-      <th>Customer Name</th>
-      <td>{{customers.userName | titlecase}}</td>
-    </tr>
-    <tr>
-      <th>Mobile No</th>
-      <td>{{customers.mobileNumber}}</td>
-    </tr>
-    <tr>
-      <th>Email</th>
-      <td>{{customers.email}}</td>
-    </tr>
-    <tr>
-      <th>Aadhaar Card</th>
-      <td>{{customers.aadharCard}}</td>
-    </tr>
-    <tr>
-      <th>Address</th>
-      <td>{{customers.address | titlecase}}</td>
-    </tr>
-    <tr>
-      <th>City</th>
-      <td>{{customers.city | titlecase}}</td>
-    </tr>
-    <tr>
-      <th>Connection Status</th>
-      <td>{{customers.connectionStatus | uppercase}}</td>
-    </tr>
-    <tr>
-      <th>Cylinder type</th>
-      <td>{{customers.cylinder.cylinderType | titlecase}}</td>
-    </tr>
-    <tr>
-      <td colspan="2" class="text-center">
-        <a class="btn btn-primary text-white" routerLink="/editcustomer/{{customers.customerId}}">Edit</a>
-      </td>
-    </tr>
-    
-  </table>
+<section class="col-md-4 mx-auto" >
+  <div *ngIf="msg!=undefined" class="alert alert-danger text-center">{{msg | titlecase}}</div>
+  <div  *ngIf="customers!=undefined">
+    <table class=" customers table table-striped table-hover col-md-8 mx-auto mt-3 "> 
+      <tr>
+        <th>Customer Id</th> 
+        <td>{{customers.customerId}}</td>
+      </tr>
+      <tr>
+        <th>Customer Name</th>
+        <td>{{customers.userName | titlecase}}</td>
+      </tr>
+      <tr>
+        <th>Mobile No</th>
+        <td>{{customers.mobileNumber}}</td>
+      </tr>
+      <tr>
+        <th>Email</th>
+        <td>{{customers.email}}</td>
+      </tr>
+      <tr>
+        <th>Aadhaar Card</th>
+        <td>{{customers.aadharCard}}</td>
+      </tr>
+      <tr>
+        <th>Address</th>
+        <td>{{customers.address | titlecase}}</td>
+      </tr>
+      <tr>
+        <th>City</th>
+        <td>{{customers.city | titlecase}}</td>
+      </tr>
+      <tr>
+        <th>Connection Status</th>
+        <td>{{customers.connectionStatus | uppercase}}</td>
+      </tr>
+      <tr>
+        <th>Cylinder type</th>
+        <td>{{customers.cylinder.cylinderType | titlecase}}</td>
+      </tr>
+      
+      
+    </table>
+    <div class="text-center">
+      <a class="btn btn-primary text-white" routerLink="/editcustomer/{{customers.customerId}}">Edit</a>
+    </div>
+  </div>
+  
+
 </section>
