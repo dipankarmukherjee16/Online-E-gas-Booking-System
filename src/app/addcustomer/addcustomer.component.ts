@@ -4,6 +4,14 @@ import { CustomerService } from '../customer.service';
 import { Customerdto } from '../customerdto';
 import { Cylinder } from '../cylinder';
 
+/**
+ *          @author: Dipankar Mukherjee        
+ *          @version: 1.0   
+ *          Description: It is a component that provides the method for adding 
+						             a new customer to the database
+ *          Created at: 23-JUNE-2021
+ */
+
 @Component({
   selector: 'app-addcustomer',
   templateUrl: './addcustomer.component.html',

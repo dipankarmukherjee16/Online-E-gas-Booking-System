@@ -3,6 +3,15 @@ import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 import { Egasconstants } from '../egasconstants';
 
+/**
+ * 			    @author: Dipankar Mukherjee        
+ *          @version: 1.0   
+ *          Description: It is a component that provides the method for viewing 
+ *          			       details of the customers by city                   
+ *          Created at: 22-JUNE-2021
+ 
+ */
+
 @Component({
   selector: 'app-viewcustomerbycity',
   templateUrl: './viewcustomerbycity.component.html',

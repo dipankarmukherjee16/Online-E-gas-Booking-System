@@ -4,6 +4,14 @@ import { CustomerService } from '../customer.service';
 import { Customerdto } from '../customerdto';
 import { Cylinder } from '../cylinder';
 
+/**
+ *          @author: Dipankar Mukherjee        
+ *          @version: 1.0   
+ *          Description: It is a component that provides the method for edit
+						             the details of an existing customer
+ *          Created at: 25-JUNE-2021
+ */
+
 @Component({
   selector: 'app-editcustomer',
   templateUrl: './editcustomer.component.html',

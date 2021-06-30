@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { CustomerService } from '../customer.service';
 import { Egasconstants } from '../egasconstants';
 
+/**
+ *        @author: Enakshi Das         
+          @version: 1.0   
+          Description: It is a component that provides the method for 
+							         viewing details of a customer by id               
+          Created at: 22-JUNE-2021
+ */
+
 @Component({
   selector: 'app-viewcustomerbyid',
   templateUrl: './viewcustomerbyid.component.html',

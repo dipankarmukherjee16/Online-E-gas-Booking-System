@@ -4,6 +4,15 @@ import { CustomerService } from '../customer.service';
 import { Cylinder } from '../cylinder';
 import { Egasconstants } from '../egasconstants';
 
+ 
+/**
+ *         @author: Dipankar Mukherjee        
+           @version: 1.0   
+           Description: It is a component that provides the method for viewing 
+           			        details of customers by cylinder type                  
+           Created at: 21-JUNE-2021
+ */
+
 @Component({
   selector: 'app-viewcustomerbycylindertype',
   templateUrl: './viewcustomerbycylindertype.component.html',

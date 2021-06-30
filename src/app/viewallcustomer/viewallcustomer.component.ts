@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { Customer } from '../customer';
 import { CustomerService } from '../customer.service';
 
+/**
+ *        @author: Enakshi Das       
+          @version: 1.0   
+          Description: It is a component that provides the method for viewing 
+          			       details of all the customers            
+          Created at: 21-JUNE-2021
+ */
+
 @Component({
   selector: 'app-viewallcustomer',
   templateUrl: './viewallcustomer.component.html',
