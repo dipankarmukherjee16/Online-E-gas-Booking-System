@@ -3,7 +3,7 @@
     You are not Authenticate/Authorized to accesss
   </div>-->
   <h2 class="text-center">Login</h2>
-  <div *ngIf="storageservice.msg != undefined" class="alert alert-warning">{{storageservice.msg}}</div>
+  <div *ngIf="storageservice.msg != undefined" class="alert alert-warning text-center">{{storageservice.msg | titlecase}}</div>
   <form #frm="ngForm" (ngSubmit)="doLogin()">
     <div>User Id</div>
     <div><input type="text" name="txtname" [(ngModel)]="login.userId" #loginuid="ngModel" required class="form-control"/></div>

@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { InvoiceService } from '../invoice.service';
 
+/**
+ *          @author: Moinak Majumder        
+ *          @version: 1.0   
+ *          Description: It is a component that provides the method for updating 
+						             the booking status and invoice status by the admin after 
+                         cylindered is delivered
+ *          Created at: 24-JUNE-2021
+ */
+
 @Component({
   selector: 'app-cylinderdelivered',
   templateUrl: './cylinderdelivered.component.html',

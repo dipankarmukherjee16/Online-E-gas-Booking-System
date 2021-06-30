@@ -2,6 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
+
+/**
+ *          @author: Moinak Majumder        
+ *          @version: 1.0   
+ *          Description: It is a service that provides methods for 
+						             making rest API call to the backend web-server
+ *          Created at: 23-JUNE-2021
+ */
+
 @Injectable({
   providedIn: 'root'
 })

@@ -1,6 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { InvoiceService } from '../invoice.service';
 
+/**
+ *          @author: Moinak Majumder        
+ *          @version: 1.0   
+ *          Description: It is a component that provides the method for generating 
+						             invoice by the admin for a given booking done by a customer
+                         and inserts a invoice into the database
+ *          Created at: 23-JUNE-2021
+ */
+
 @Component({
   selector: 'app-generateinvoice',
   templateUrl: './generateinvoice.component.html',

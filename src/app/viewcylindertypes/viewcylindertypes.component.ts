@@ -3,6 +3,14 @@ import { CustomerService } from '../customer.service';
 import { Cylinder } from '../cylinder';
 import { CylindertypeService } from '../cylindertype.service';
 
+/**
+ *        @author: Debabrata Deb       
+          @version: 1.0   
+          Description: It is a component that provides the method for viewing 
+          			       details of all the cylinder types            
+          Created at: 24-JUNE-2021
+ */
+
 @Component({
   selector: 'app-viewcylindertypes',
   templateUrl: './viewcylindertypes.component.html',

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { CustomerService } from './customer.service';
+import { Egasconstants } from './egasconstants';
 import { StorageService } from './storage.service';
 
 @Component({
@@ -16,7 +17,7 @@ export class AppComponent {
     this.customerservice.doLogout().subscribe(
       data=>{
         localStorage.removeItem("userinfo");
-        this.storageservice.msg="You have logged out";
+        this.storageservice.msg=Egasconstants.LOGOUT_MSG;
         this.storageservice.loginflag=false;
         this.router.navigateByUrl("/home");}
     );

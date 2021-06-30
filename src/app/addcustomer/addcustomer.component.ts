@@ -43,7 +43,7 @@ export class AddcustomerComponent implements OnInit {
         this.errorMsg=undefined;
         this.errorMsgs=undefined;
         this.customer=new Customerdto();
-        this.form.reset;
+        this.form.reset();
        
       },
       error=>{

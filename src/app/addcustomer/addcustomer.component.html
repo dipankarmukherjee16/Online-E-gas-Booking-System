@@ -3,17 +3,13 @@
 </div>
 
 <section class="col-md-4 mx-auto card card-primary p-1 m-1" id="addid">
-  <div class="alert alert-success" *ngIf="msg!=undefined">{{msg}}</div>
-  <div class="alert alert-danger" *ngIf="errorMsg!=undefined && errorMsgs==undefined">{{errorMsg}}</div>
-  <div class="alert alert-danger" *ngIf="errorMsg==undefined && errorMsgs!=undefined">{{errorMsgs}}</div>
-  <!-- <div class="alert alert-danger" *ngIf="errorMsg!=undefined || errors!=undefined">{{errorMsg}}
-    <div *ngFor="let e of errors">{{e}}</div>
-  </div> -->
-
+  <div class="alert alert-success text-center" *ngIf="msg!=undefined">{{msg}}</div>
+  <div class="alert alert-danger text-center" *ngIf="errorMsg!=undefined && errorMsgs==undefined">{{errorMsg}}</div>
+  <div class="alert alert-danger text-center" *ngIf="errorMsg==undefined && errorMsgs!=undefined">{{errorMsgs}}</div>
   <form #frm="ngForm" (ngSubmit)="add()">
     
     <div>Customer Name</div>
-    <div><input type="text" class="form-control" name="txtname" placeholder="Enter Customer Name" min="3" [(ngModel)]="customer.userName" #cname="ngModel" required pattern="^[A-Za-z\s]{1,}[A-za-z\s]{0,}$"/></div>
+    <div><input type="text" class="form-control" name="txtname" placeholder="Enter Customer Name"  minlength="3" maxlength="25" [(ngModel)]="customer.userName" #cname="ngModel" required pattern="^[A-Za-z\s]{1,}[A-za-z\s]{0,}$"/></div>
     <div *ngIf="cname.invalid && cname.touched" class="alert alert-danger">
       <div *ngIf="cname.errors.required">Customer Name is Invalid</div>
       <div *ngIf="cname.errors.pattern">Customer Name must contain alphabet and can have space in between</div>

@@ -3,6 +3,14 @@ import { CustomerService } from '../customer.service';
 import { Egasconstants } from '../egasconstants';
 import { SurrendercylinderService } from '../surrendercylinder.service';
 
+/**
+ *          @author: Debabrata Deb        
+ *          @version: 1.0   
+ *          Description: It is a component that provides the method for surrendering 
+						             an existing connection
+ *          Created at: 23-JUNE-2021
+ */
+
 @Component({
   selector: 'app-surrendercustomer',
   templateUrl: './surrendercustomer.component.html',

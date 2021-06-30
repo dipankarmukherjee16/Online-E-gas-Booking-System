@@ -31,10 +31,10 @@
     </div>
 
     <div>Aadhar Card Number</div>
-    <div><input type="text" class="form-control" name="txtaadhar" placeholder="Enter Aadhar No" [(ngModel)]="customers.aadharCard" #caadhar="ngModel"  pattern="[0-9]{12}"/></div>
-    <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">
+    <div><input type="text" class="form-control" name="txtaadhar" placeholder="Enter Aadhar No" [(ngModel)]="customers.aadharCard" #caadhar="ngModel"  pattern="[0-9]{12}" readonly/></div>
+    <!-- <div *ngIf="caadhar.invalid && caadhar.touched" class="alert alert-danger">
       <div *ngIf="caadhar.errors.pattern">Aadhar card no is of 12 digits</div>
-    </div>
+    </div> -->
     
     <div>Customer Address</div>
     <div><input type="text" class="form-control" name="txtmobile" placeholder="Enter Address" [(ngModel)]="customers.address" #caddress="ngModel" required/></div>

@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { GasBooking } from '../gas-booking';
 import { GasbookingService } from '../gasbooking.service';
 
+/**
+ *          @author: Enakshi Das        
+ *          @version: 1.0   
+ *          Description: It is a component that provides the method for viewing 
+						             the no. of cylinders booked by a customer in a given year
+ *          Created at: 24-JUNE-2021
+ */
+
 @Component({
   selector: 'app-viewcylindersbooked',
   templateUrl: './viewcylindersbooked.component.html',

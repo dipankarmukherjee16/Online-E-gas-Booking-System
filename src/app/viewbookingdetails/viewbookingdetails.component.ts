@@ -3,6 +3,14 @@ import { Egasconstants } from '../egasconstants';
 import { GasBooking } from '../gas-booking';
 import { GasbookingService } from '../gasbooking.service';
 
+/**
+ *          @author: Moinak Majumder        
+ *          @version: 1.0   
+ *          Description: It is a component that provides the method for viewing 
+						             the booking details of a customer for a given customer id
+ *          Created at: 21-JUNE-2021
+ */
+
 @Component({
   selector: 'app-viewbookingdetails',
   templateUrl: './viewbookingdetails.component.html',
